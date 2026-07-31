@@ -539,7 +539,7 @@ ai-creator-os/
 ## 🎥 Demo Video
 
 **Public Demo Video:**  
-https://youtu.be/uwvytN99VpU?si=q3Irog0rQQXEaU7s
+https://youtu.be/q4gKvHAJ31k?si=DR5budXlg22CvTMi
 
 The demonstration video showcases:
 - The creative workflow challenges addressed by LensMind AI
@@ -559,7 +559,7 @@ The demonstration video showcases:
 | Resource | Link |
 |----------|------|
 | 🌐 **Live Application** | https://lenz-mind-ai.vercel.app |
-| 🎥 **Demo Video** | https://youtu.be/uwvytN99VpU?si=q3Irog0rQQXEaU7s |
+| 🎥 **Demo Video** | https://youtu.be/q4gKvHAJ31k?si=DR5budXlg22CvTMi |
 | 💻 **GitHub Repository** | https://github.com/SRI-SARA-TEJ/LenzMind-AI |
 | ⚙️ **Backend API** | https://lenzmind-ai.onrender.com/api/v1/health |
 | ❤️ **Backend Health Check** | https://lenzmind-ai.onrender.com/api/v1/health |
