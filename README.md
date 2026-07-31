@@ -539,30 +539,31 @@ ai-creator-os/
 
 ## 🎥 Demo Video
 
-**Public Demo Video:**
-> `[ADD YOUR YOUTUBE LINK HERE]`
+**Public Demo Video:**  
+https://youtu.be/uwvytN99VpU?si=q3Irog0rQQXEaU7s
 
-The demonstration video covers:
-- Problem statement and creative workflow pain points
-- LensMind AI solution overview
-- Five AI agents explained
-- Live upload and analysis demonstration
-- Recommendations (accept / dismiss) walkthrough
+The demonstration video showcases:
+- The creative workflow challenges addressed by LensMind AI
+- An overview of the AI-powered creator assistant
+- The five AI intelligence modules and their roles
+- Live image upload and AI-powered scene analysis
+- Intelligent camera and editing recommendations
+- Creator Memory and Workflow Recommendation features
+- Analytics dashboard and AI insights
 - IBM watsonx.ai integration
-- IBM Bob development workflow
-- Real-world impact
-
+- How IBM Bob was used throughout development
+- Real-world impact and future vision
+  
 ---
 
 ## 🌐 Live Application
-
 | Resource | Link |
 |----------|------|
-| **Frontend** | https://lenz-mind-ai.vercel.app |
-| **Backend API** | https://lenzmind-ai.onrender.com |
-| **Backend Health Check** | https://lenzmind-ai.onrender.com/api/v1/health |
-| **GitHub Repository** | https://github.com/SRI-SARA-TEJ/LenzMind-AI |
-| **Demo Video** | `[ADD YOUR YOUTUBE LINK HERE]` |
+| 🌐 **Live Application** | https://lenz-mind-ai.vercel.app |
+| 🎥 **Demo Video** | https://youtu.be/uwvytN99VpU?si=q3Irog0rQQXEaU7s |
+| 💻 **GitHub Repository** | https://github.com/SRI-SARA-TEJ/LenzMind-AI |
+| ⚙️ **Backend API** | https://lenzmind-ai.onrender.com |
+| ❤️ **Backend Health Check** | https://lenzmind-ai.onrender.com/api/v1/health |
 
 ---
 
