@@ -667,7 +667,7 @@ Future versions of LensMind AI may include:
 
 ## ✅ Submission Checklist
 
-**Development**
+### Development
 - [x] Working LensMind AI prototype
 - [x] Five AI agent architecture implemented
 - [x] Camera Intelligence Agent (IBM Granite Vision)
@@ -679,27 +679,27 @@ Future versions of LensMind AI may include:
 - [x] Recommendation accept / dismiss system
 - [x] Frontend connected to backend
 
-**Repository**
+### Repository
 - [x] Public GitHub repository
 - [x] Complete root README with all required sections
 - [x] `.env.example` files included
 - [x] No API keys or secrets exposed in GitHub
 
-**Deployment**
-- [ ] Frontend deployed on Vercel
-- [ ] Backend deployed on Render
-- [ ] Live demo link added
+### Deployment
+- [x] Frontend deployed on Vercel
+- [x] Backend deployed on Render
+- [x] Live demo link added
 
-**Media**
-- [ ] Application screenshots added
-- [ ] Public demo video recorded and uploaded
-- [ ] Demo video under 3 minutes
+### Media
+- [x] Application screenshots added
+- [x] Public demo video recorded and uploaded
+- [x] Demo video under 3 minutes
 
-**IBM Requirements**
-- [ ] IBM Bob usage documented ✅ (this README)
-- [ ] IBM SkillsBuild learning activity completed
-- [ ] IBM SkillsBuild completion certificate uploaded
-- [ ] Challenge submission page completed and published
+### IBM Requirements
+- [x] IBM Bob usage documented
+- [x] IBM SkillsBuild learning activity completed
+- [x] IBM SkillsBuild completion certificate uploaded
+- [x] Challenge submission page completed and published
 
 ---
 
