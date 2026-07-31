@@ -338,11 +338,11 @@ IBM Bob was used not only for code generation but as a **collaborative developme
 As part of the IBM AI Builders Challenge requirements, the required IBM SkillsBuild learning activity was completed by every team member.
 
 **Completed Learning Activity:**
-> *How IBM Bob and AI Tools Are Changing the Way Solutions Are Built*
+> *Lab: Troubleshoot Your Code Using IBM Bob*
 
-This course provided practical knowledge about AI-assisted software development, modern development workflows, and how IBM Bob supports the full software development lifecycle.
+This lab provided hands-on practical experience with AI-assisted code troubleshooting, debugging workflows, and how IBM Bob supports the full software development lifecycle. Completed and submitted through the official IBM AI Builders Challenge platform.
 
-The completion certificate has been retained and will be submitted as part of the official challenge submission.
+The completion certificate has been retained and submitted as part of the official challenge submission.
 
 ---
 
@@ -561,7 +561,7 @@ The demonstration video showcases:
 | 🌐 **Live Application** | https://lenz-mind-ai.vercel.app |
 | 🎥 **Demo Video** | https://youtu.be/uwvytN99VpU?si=q3Irog0rQQXEaU7s |
 | 💻 **GitHub Repository** | https://github.com/SRI-SARA-TEJ/LenzMind-AI |
-| ⚙️ **Backend API** | https://lenzmind-ai.onrender.com |
+| ⚙️ **Backend API** | https://lenzmind-ai.onrender.com/api/v1/health |
 | ❤️ **Backend Health Check** | https://lenzmind-ai.onrender.com/api/v1/health |
 
 ---
