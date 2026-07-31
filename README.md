@@ -713,8 +713,7 @@ This project is licensed under the **MIT License**. See the [LICENSE](LICENSE) f
 - **IBM Bob** — Primary AI-assisted development tool used throughout the entire development lifecycle
 - **IBM SkillsBuild** — Learning resources supporting the challenge
 - **IBM AI Builders Challenge 2026** — Challenge platform and opportunity
-- **IBM watsonx.ai** — AI foundation powering all five creative agents
-- **IBM Granite** — Vision and text models driving LensMind's intelligence
+- **Google Gemini 1.5 Flash** — AI foundation powering all five creative agents (vision + text)
 - **React & Vite** — Frontend application framework
 - **Express.js** — Backend REST API framework
 - **MongoDB & Mongoose** — Database layer
