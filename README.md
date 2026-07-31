@@ -17,7 +17,31 @@
 
 ## 📑 Table of Contents
 
-[Project Overview](#-project-overview) · [Challenge Theme](#-selected-challenge-theme) · [Problem Statement](#-problem-statement) · [Solution](#-solution) · [The Five AI Agents](#-the-five-ai-agents) · [AI Architecture](#-ai-architecture) · [Core Principles](#-core-principles) · [Key Features](#-key-features) · [Technology Stack](#️-technology-stack) · [System Architecture](#️-system-architecture) · [How IBM Bob Was Used](#-how-ibm-bob-was-used) · [IBM SkillsBuild](#-ibm-skillsbuild-learning) · [Getting Started](#-getting-started) · [Environment Variables](#-environment-variables) · [API Endpoints](#-api-endpoints) · [Project Structure](#-project-structure) · [Screenshots](#-screenshots) · [Demo Video](#-demo-video) · [Live Application](#-live-application) · [Real-World Impact](#-real-world-impact) · [Innovation](#-innovation) · [Future Improvements](#-future-improvements) · [Challenge Submission](#-ibm-ai-builders-challenge-submission) · [License](#-license) · [Acknowledgements](#-acknowledgements)
+- [Project Overview](#-project-overview)
+- [Challenge Theme](#-selected-challenge-theme)
+- [Problem Statement](#-problem-statement)
+- [Solution](#-solution)
+- [The Five AI Agents](#-the-five-ai-agents)
+- [AI Architecture](#-ai-architecture)
+- [Core Principles](#-core-principles)
+- [Key Features](#-key-features)
+- [Technology Stack](#️-technology-stack)
+- [System Architecture](#️-system-architecture)
+- [How IBM Bob Was Used](#-how-ibm-bob-was-used)
+- [IBM SkillsBuild](#-ibm-skillsbuild-learning)
+- [Getting Started](#-getting-started)
+- [Environment Variables](#-environment-variables)
+- [API Endpoints](#-api-endpoints)
+- [Project Structure](#-project-structure)
+- [Screenshots](#-screenshots)
+- [Demo Video](#-demo-video)
+- [Live Application](#-live-application)
+- [Real-World Impact](#-real-world-impact)
+- [Innovation](#-innovation)
+- [Future Improvements](#-future-improvements)
+- [Challenge Submission](#-ibm-ai-builders-challenge-submission)
+- [License](#-license)
+- [Acknowledgements](#-acknowledgements)
 
 ---
 
