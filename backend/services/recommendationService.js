@@ -4,7 +4,7 @@
  * Manages stored recommendation records and drives AI agent analysis.
  *
  * API contract is intentionally stable: controllers call the same functions
- * regardless of whether real watsonx.ai calls happen or mock responses are
+ * regardless of whether real Gemini AI calls happen or mock responses are
  * returned. The AI plumbing is fully behind the agentOrchestrator abstraction.
  *
  * Design principle: AI must explain itself.

@@ -499,7 +499,7 @@ export const MOCK_ANALYTICS_INSIGHTS = [
     category:        'Growth',
     priority:        'High',
     title:           'Creator score reached 87 — top 15% of platform',
-    body:            'Your Creator Score has grown from 48 to 87 over 6 months. Based on current trajectory, IBM watsonx.ai predicts you will exceed 90 within the next 4–6 sessions.',
+    body:            'Your Creator Score has grown from 48 to 87 over 6 months. Based on current trajectory, Gemini AI predicts you will exceed 90 within the next 4–6 sessions.',
     confidenceScore: 89,
     metric:          'latestCreatorScore',
     metricValue:     87,

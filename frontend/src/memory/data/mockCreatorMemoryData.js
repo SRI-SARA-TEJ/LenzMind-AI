@@ -873,7 +873,7 @@ export const MOCK_INSIGHTS = [
     type:         'Style Match',
     priority:     'High',
     title:        'Your editing style matches 3 trending creator profiles',
-    body:         'IBM watsonx.ai identified your cinematic travel style as closely matching creators in the top 15% of YouTube travel content. Your teal-orange grade and stabilisation technique are a strong differentiator.',
+    body:         'Gemini AI identified your cinematic travel style as closely matching creators in the top 15% of YouTube travel content. Your teal-orange grade and stabilisation technique are a strong differentiator.',
     actionLabel:  null,
     actionRoute:  null,
     dismissed:    false,

@@ -279,7 +279,7 @@ export default function AnalyticsDashboard() {
     <div className={styles.dashboard}>
       <section className={styles.hero}>
         <div className={styles.heroCopy}>
-          <div className={styles.ibmBadge}><span /> IBM watsonx.ai</div>
+          <div className={styles.ibmBadge}><span /> Google Gemini AI</div>
           <p className={styles.eyebrow}>CREATOR INTELLIGENCE</p>
           <h1>Creator Score</h1>
           <p className={styles.heroSub}>Your creative performance is building momentum.</p>

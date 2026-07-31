@@ -9,7 +9,7 @@
  *   - whether the user accepted/dismissed it (human stays in control)
  *
  * In the MVP these records are stubs. Real agents will create them via
- * the recommendations service once IBM watsonx.ai is integrated.
+ * the recommendations service once Gemini AI is integrated.
  */
 
 const mongoose = require('mongoose');
