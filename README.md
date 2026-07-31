@@ -337,8 +337,8 @@ Install the following before running the project:
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/YOUR-USERNAME/LensMind.git
-cd LensMind/ai-creator-os
+git clone https://github.com/SRI-SARA-TEJ/LenzMind-AI.git
+cd LenzMind-AI
 ```
 
 ### 2. Backend Setup
@@ -534,10 +534,10 @@ The demonstration video covers:
 
 | Resource | Link |
 |----------|------|
-| **Frontend** | `[ADD YOUR VERCEL URL HERE]` |
-| **Backend API** | `[ADD YOUR RENDER URL HERE]` |
-| **Backend Health Check** | `[ADD YOUR RENDER URL HERE]/api/v1/health` |
-| **GitHub Repository** | `https://github.com/YOUR-USERNAME/LensMind` |
+| **Frontend** | https://lenz-mind-ai.vercel.app |
+| **Backend API** | https://lenzmind-ai.onrender.com |
+| **Backend Health Check** | https://lenzmind-ai.onrender.com/api/v1/health |
+| **GitHub Repository** | https://github.com/SRI-SARA-TEJ/LenzMind-AI |
 | **Demo Video** | `[ADD YOUR YOUTUBE LINK HERE]` |
 
 ---
