@@ -9,7 +9,7 @@
 ![Node.js](https://img.shields.io/badge/Node.js-18+-339933?logo=node.js&logoColor=white)
 ![Express](https://img.shields.io/badge/Express-4-000000?logo=express&logoColor=white)
 ![MongoDB](https://img.shields.io/badge/MongoDB-Mongoose-47A248?logo=mongodb&logoColor=white)
-![IBM watsonx](https://img.shields.io/badge/IBM-watsonx.ai-0530AD?logo=ibm&logoColor=white)
+![Gemini](https://img.shields.io/badge/Google-Gemini%201.5%20Flash-4285F4?logo=google&logoColor=white)
 ![License](https://img.shields.io/badge/License-MIT-yellow)
 ![IBM Bob](https://img.shields.io/badge/Built%20with-IBM%20Bob-0f62fe)
 
@@ -47,7 +47,7 @@
 
 ## 📌 Project Overview
 
-**LensMind AI** is an AI-powered creative workspace that gives content creators a team of five specialized IBM watsonx.ai agents — all in one platform.
+**LensMind AI** is an AI-powered creative workspace that gives content creators a team of five specialized Google Gemini AI agents — all in one platform.
 
 Instead of jumping between separate tools to review footage quality, plan edits, write captions, analyze performance, and learn from past work, LensMind AI brings five specialized AI agents into a single unified workspace where they collaborate on every creative project.
 
@@ -114,7 +114,7 @@ LensMind AI introduces a **five-agent AI creative workspace** where specialized 
     └────────┬────────────┘
              │
     ┌────────▼────────────────────────────────────────┐
-    │           FIVE AI AGENTS (IBM watsonx.ai)        │
+    │         FIVE AI AGENTS (Google Gemini AI)         │
     │                                                  │
     │  📷 Camera Intelligence  →  Technical Quality    │
     │  ✂️  Editing Intelligence  →  Post-Production     │
@@ -195,7 +195,7 @@ flash    flash    flash               flash
 ```
 Specialized AI Agents
         +
-IBM Granite AI (Right model for the right task)
+Google Gemini AI (Right model for the right task)
         +
 Explainable Recommendations
         +
@@ -283,8 +283,8 @@ These principles are **enforced in code**:
     ┌──────────┴──────────┐
     ▼                     ▼
 ┌──────────────┐   ┌──────────────────┐
-│ IBM watsonx  │   │   MongoDB Atlas  │
-│ Granite AI   │   │  Projects        │
+│ Google       │   │   MongoDB Atlas  │
+│ Gemini Flash │   │  Projects        │
 │ Vision + Text│   │  Recommendations │
 └──────────────┘   └──────────────────┘
 ```
@@ -304,7 +304,7 @@ IBM Bob assisted with:
 
 ### 💻 Code Generation & Development
 IBM Bob supported the development of:
-- All five AI agent classes with IBM watsonx.ai integration
+- All five AI agent classes with Google Gemini AI integration
 - Agent orchestrator and recommendation service
 - Express.js REST API routes and controllers
 - React frontend pages, components, and routing
@@ -312,7 +312,7 @@ IBM Bob supported the development of:
 
 ### 🐛 Debugging
 IBM Bob was used to identify and resolve issues involving:
-- IBM watsonx.ai SDK integration and mock fallback logic
+- Google Gemini AI integration and mock fallback logic
 - MongoDB connection and Mongoose model validation
 - Multer file upload middleware configuration
 - React Router navigation and component state
@@ -356,7 +356,7 @@ Install the following before running the project:
 - **Node.js** v18 or higher
 - **npm** v9 or higher
 - **MongoDB** — local install or [MongoDB Atlas](https://www.mongodb.com/cloud/atlas) free tier
-- **IBM Cloud account** + **watsonx.ai access** *(optional — mock mode works without it)*
+- **Google AI Studio account** + **Gemini API key** *(optional — mock mode works without it, get free key at [aistudio.google.com](https://aistudio.google.com/app/apikey))*
 
 ### 1. Clone the Repository
 
@@ -384,7 +384,7 @@ copy .env.example .env
 
 > ⚠️ **Never commit your `.env` file, API keys, or database credentials to GitHub.**
 
-Configure your `.env` — at minimum set `MONGODB_URI`. IBM watsonx.ai credentials are optional (mock mode activates automatically when unset):
+Configure your `.env` — at minimum set `MONGODB_URI`. Gemini AI credentials are optional (mock mode activates automatically when unset):
 
 ```
 MONGODB_URI=mongodb://localhost:27017/lensmind
@@ -492,11 +492,11 @@ ai-creator-os/
 │
 ├── backend/
 │   ├── agents/
-│   │   ├── cameraIntelligence/    IBM Granite Vision — technical quality analysis
-│   │   ├── editingIntelligence/   IBM Granite Text  — post-production suggestions
-│   │   ├── contentOptimization/   IBM Granite Text  — publishing strategy
+│   │   ├── cameraIntelligence/    Gemini Vision — technical quality analysis
+│   │   ├── editingIntelligence/   Gemini Text   — post-production suggestions
+│   │   ├── contentOptimization/   Gemini Text   — publishing strategy
 │   │   ├── analytics/             Roadmap — performance trend analysis
-│   │   └── creatorMemory/         IBM Granite Text  — cross-project personalization
+│   │   └── creatorMemory/         Gemini Text   — cross-project personalization
 │   │
 │   ├── config/                    Database and storage configuration
 │   ├── controllers/               HTTP request handlers
@@ -549,7 +549,7 @@ The demonstration video showcases:
 - Intelligent camera and editing recommendations
 - Creator Memory and Workflow Recommendation features
 - Analytics dashboard and AI insights
-- IBM watsonx.ai integration
+- Google Gemini AI integration
 - How IBM Bob was used throughout development
 - Real-world impact and future vision
   
@@ -669,12 +669,12 @@ Future versions of LensMind AI may include:
 ### Development
 - [x] Working LensMind AI prototype
 - [x] Five AI agent architecture implemented
-- [x] Camera Intelligence Agent (IBM Granite Vision)
-- [x] Editing Intelligence Agent (IBM Granite Text)
-- [x] Content Optimization Agent (IBM Granite Text)
-- [x] Creator Memory Agent (IBM Granite Text)
+- [x] Camera Intelligence Agent (Google Gemini Vision)
+- [x] Editing Intelligence Agent (Google Gemini Text)
+- [x] Content Optimization Agent (Google Gemini Text)
+- [x] Creator Memory Agent (Google Gemini Text)
 - [x] Analytics Agent stub (roadmap)
-- [x] Agent mock mode (works without IBM credentials)
+- [x] Agent mock mode (works without Gemini credentials)
 - [x] Recommendation accept / dismiss system
 - [x] Frontend connected to backend
 
