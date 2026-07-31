@@ -5,30 +5,18 @@
  * caption suggestions, keywords, hashtags, platform selection,
  * audience engagement advice, and posting strategy.
  *
- * IBM watsonx.ai integration:
- *   Uses aiService.generateText() (Granite text model) — content optimization
+ * Google Gemini AI integration:
+ *   Uses aiService.generateText() (Gemini 1.5 Flash) — content optimization
  *   is a language reasoning task, not a vision task.  The agent reasons about
  *   the asset's filename, type, and project context to produce platform-aware
- *   publishing advice.  When WATSONX_API_KEY is unset, aiService returns a
+ *   publishing advice.  When GEMINI_API_KEY is unset, aiService returns a
  *   clearly-labelled mock so the full stack keeps working end-to-end.
- *
- * Why generateText (not analyzeImage)?
- *   Publishing advice — captions, hashtags, timing — is a language task.
- *   Pixel-level analysis is not needed to recommend "#goldenhourlighting" or
- *   "post on Instagram Reels between 6–9 pm Tuesday".
- *
- * Orchestrator contract:
- *   The orchestrator always calls agent.analyze(asset).
- *   This method always resolves (never throws) and always returns an object
- *   matching the AgentResult typedef used by the orchestrator and
- *   recommendationService.
  *
  * requiresApproval is always true — no content is published automatically.
  *
  * To activate real analysis:
- *   1. Set WATSONX_API_KEY, WATSONX_PROJECT_ID, WATSONX_URL in .env
- *   2. npm install @ibm-cloud/watsonx-ai
- *   3. Uncomment the WatsonXAI client lines in services/aiService.js
+ *   1. Get a free key at https://aistudio.google.com/app/apikey
+ *   2. Set GEMINI_API_KEY in Render environment variables
  *
  * Data flow:
  *   agentOrchestrator.analyzeAsset()

@@ -16,11 +16,11 @@
  *   context.project    — the current Project document
  *   context.history    — past Recommendation documents (all projects, all agents)
  *
- * IBM watsonx.ai integration:
- *   Uses aiService.generateText() (Granite text model).  The agent builds a
+ * Google Gemini AI integration:
+ *   Uses aiService.generateText() (Gemini 1.5 Flash).  The agent builds a
  *   compact plain-text summary of decision history and asks the model to
  *   identify patterns and recommend personalised guidance.  When
- *   WATSONX_API_KEY is unset, aiService returns a clearly-labelled mock so
+ *   GEMINI_API_KEY is unset, aiService returns a clearly-labelled mock so
  *   the full stack keeps working without credentials.
  *
  * Design principles:
@@ -30,9 +30,8 @@
  *   - The agent gracefully handles the case where there is no prior history.
  *
  * To activate real analysis:
- *   1. Set WATSONX_API_KEY, WATSONX_PROJECT_ID, WATSONX_URL in .env
- *   2. npm install @ibm-cloud/watsonx-ai
- *   3. Uncomment the WatsonXAI client lines in services/aiService.js
+ *   1. Get a free key at https://aistudio.google.com/app/apikey
+ *   2. Set GEMINI_API_KEY in Render environment variables
  *
  * Data flow:
  *   agentOrchestrator.analyzeProject()

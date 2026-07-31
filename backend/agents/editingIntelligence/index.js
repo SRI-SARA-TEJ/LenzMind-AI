@@ -5,22 +5,15 @@
  * asset: brightness, contrast, crop, colour enhancement, sharpness, and
  * workflow guidance.
  *
- * IBM watsonx.ai integration:
- *   Uses aiService.generateText() (Granite text model) to reason about how
+ * Google Gemini AI integration:
+ *   Uses aiService.generateText() (Gemini 1.5 Flash) to reason about how
  *   the asset should be edited based on its metadata and type.  When
- *   WATSONX_API_KEY is not set, aiService returns a clearly-labelled mock
+ *   GEMINI_API_KEY is not set, aiService returns a clearly-labelled mock
  *   so the full stack keeps working end-to-end.
  *
- * Why generateText (not analyzeImage)?
- *   Editing advice is a reasoning task — "given this type of image, what
- *   edits improve it?" — not a pixel-perception task.  The vision model is
- *   reserved for the Camera Intelligence Agent which needs to see pixels.
- *   Using the right model for the right job also saves cost at scale.
- *
  * To activate real analysis:
- *   1. Set WATSONX_API_KEY, WATSONX_PROJECT_ID, WATSONX_URL in .env
- *   2. npm install @ibm-cloud/watsonx-ai
- *   3. Uncomment the WatsonXAI client lines in services/aiService.js
+ *   1. Get a free key at https://aistudio.google.com/app/apikey
+ *   2. Set GEMINI_API_KEY in Render environment variables
  *
  * Data flow:
  *   agentOrchestrator.analyzeAsset()

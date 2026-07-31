@@ -155,7 +155,7 @@ export default function DashboardPage() {
         <div className={styles.sectionHeader}>
           <div>
             <h2 className={styles.sectionTitle}>AI Agent Status</h2>
-            <p className={styles.sectionSubtitle}>Agents will activate when IBM watsonx.ai is configured</p>
+            <p className={styles.sectionSubtitle}>Agents will activate when Gemini AI is configured</p>
           </div>
         </div>
         <div className={styles.agentGrid}>

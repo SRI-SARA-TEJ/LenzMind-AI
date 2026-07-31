@@ -10,7 +10,7 @@
  *
  * Props:
  *   variant — 'info' (default) | 'mock'
- *             'mock' is shown when watsonx.ai is not configured so the user
+ *             'mock' is shown when Gemini AI is not configured so the user
  *             understands why they are seeing placeholder data.
  */
 
@@ -29,8 +29,8 @@ export default function AIDisclaimer({ variant = 'info' }) {
         </svg>
         <span>
           <strong>Mock mode — </strong>
-          IBM watsonx.ai is not configured. Recommendations below are labelled placeholders.
-          Set <code>WATSONX_API_KEY</code> in <code>.env</code> to enable real AI analysis.
+          Gemini AI is not configured. Recommendations below are labelled placeholders.
+          Set <code>GEMINI_API_KEY</code> in Render env vars to enable real AI analysis.
         </span>
       </div>
     );

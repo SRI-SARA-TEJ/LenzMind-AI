@@ -4,17 +4,16 @@
  * Analyzes photo/video technical quality: sharpness, exposure, noise,
  * focus accuracy, and lens distortion.
  *
- * IBM watsonx.ai integration:
+ * Google Gemini AI integration:
  *   This agent calls aiService.analyzeImage() which proxies to the
- *   watsonx.ai Vision model (granite-vision). When WATSONX_API_KEY is not
+ *   Gemini 1.5 Flash multimodal model. When GEMINI_API_KEY is not
  *   set, aiService returns a clearly-labelled mock response so the rest of
  *   the stack (orchestrator, recommendationService, controllers) keeps
  *   working end-to-end.
  *
  * To activate real analysis:
- *   1. Set WATSONX_API_KEY, WATSONX_PROJECT_ID, WATSONX_URL in .env
- *   2. npm install @ibm-cloud/watsonx-ai
- *   3. Uncomment the WatsonXAI client lines in services/aiService.js
+ *   1. Get a free key at https://aistudio.google.com/app/apikey
+ *   2. Set GEMINI_API_KEY in Render environment variables
  *
  * Data flow:
  *   uploadController  →  agentOrchestrator.analyzeAsset()
@@ -157,8 +156,8 @@ class CameraIntelligenceAgent {
     return {
       status:      'mock',
       agentType:   this.agentType,
-      title:       'Camera analysis (mock — watsonx.ai not configured)',
-      explanation: `Mock result for "${name}". Set WATSONX_API_KEY in .env to enable real IBM watsonx.ai vision analysis.`,
+      title:       'Camera analysis (mock — Gemini AI not configured)',
+      explanation: `Mock result for "${name}". Set GEMINI_API_KEY in Render env vars to enable real Gemini vision analysis.`,
       confidence:  null,
       tags:        ['mock', 'camera-quality'],
       details:     { mock: true },
