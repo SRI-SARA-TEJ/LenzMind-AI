@@ -1,0 +1,54 @@
+/* ── Spinner ────────────────────────────────────────────────────────────────── */
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.spinner {
+  display: inline-block;
+  animation: spin 0.75s linear infinite;
+  vertical-align: middle;
+}
+
+/* ── Skeleton shimmer ────────────────────────────────────────────────────────── */
+@keyframes shimmer {
+  0%   { background-position: -400px 0; }
+  100% { background-position:  400px 0; }
+}
+
+.bone {
+  background: linear-gradient(
+    90deg,
+    var(--color-surface-2) 25%,
+    var(--color-border)    50%,
+    var(--color-surface-2) 75%
+  );
+  background-size: 800px 100%;
+  animation: shimmer 1.4s ease-in-out infinite;
+  border-radius: var(--radius-sm);
+}
+
+/* Skeleton card wrapper — mirrors RecommendationCard shape */
+.skeletonCard {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.skeletonRow {
+  display: flex;
+  gap: var(--space-3);
+  align-items: center;
+}
+
+/* Skeleton shape presets */
+.badge       { height: 22px; width: 72px;  border-radius: var(--radius-full); }
+.confidence  { height: 14px; width: 90px; }
+.title       { height: 18px; width: 55%; }
+.line        { height: 13px; width: 100%; }
+.lineShort   { height: 13px; width: 72%; }
+.btnPrimary  { height: 34px; flex: 1; }
+.btnSecondary{ height: 34px; width: 96px; }

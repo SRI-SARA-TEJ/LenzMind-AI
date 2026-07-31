@@ -1,0 +1,40 @@
+/* MemoryPlaceholder.module.css
+ *
+ * Shared placeholder styles used by all Phase-1 memory component placeholders.
+ * Matches the dark theme and indigo accent used across the rest of the app.
+ */
+
+.placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 32px 20px;
+  background: rgba(255,255,255,0.03);
+  border: 1px dashed rgba(99,102,241,0.25);
+  border-radius: 16px;
+  text-align: center;
+  width: 100%;
+}
+
+.placeholderIcon {
+  font-size: 36px;
+  line-height: 1;
+  margin-bottom: 4px;
+  opacity: 0.7;
+}
+
+.placeholderLabel {
+  font-size: 13px;
+  font-weight: 700;
+  color: rgba(165,180,252,0.7);
+  letter-spacing: 0.02em;
+}
+
+.placeholderSub {
+  font-size: 11px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.25);
+  letter-spacing: 0.03em;
+}

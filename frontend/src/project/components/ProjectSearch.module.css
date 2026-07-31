@@ -1,0 +1,84 @@
+/* ProjectSearch.module.css */
+
+.wrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 16px;
+  flex-shrink: 0;
+}
+
+.inputWrap {
+  flex: 1;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.icon {
+  position: absolute;
+  left: 11px;
+  width: 15px;
+  height: 15px;
+  color: rgba(255, 255, 255, 0.3);
+  pointer-events: none;
+}
+
+.input {
+  width: 100%;
+  padding: 9px 12px 9px 34px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  font-size: 13px;
+  color: #e8eaf0;
+  outline: none;
+  transition: border-color 0.15s;
+}
+
+.input::placeholder { color: rgba(255, 255, 255, 0.2); }
+.input:focus { border-color: rgba(99, 102, 241, 0.5); }
+
+.clear {
+  position: absolute;
+  right: 10px;
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.3);
+  font-size: 11px;
+  cursor: pointer;
+  padding: 2px 4px;
+  border-radius: 4px;
+}
+.clear:hover { color: rgba(255, 255, 255, 0.7); }
+
+.viewToggle {
+  display: flex;
+  gap: 4px;
+  flex-shrink: 0;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  padding: 3px;
+}
+
+.viewBtn {
+  width: 30px;
+  height: 30px;
+  border-radius: 7px;
+  background: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s, color 0.15s;
+}
+
+.viewBtnActive {
+  background: rgba(99, 102, 241, 0.25);
+  color: #a5b4fc;
+}
+
+.viewBtn:hover:not(.viewBtnActive) { color: rgba(255, 255, 255, 0.6); }

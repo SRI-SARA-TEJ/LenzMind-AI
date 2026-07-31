@@ -1,0 +1,722 @@
+/* MemoryDashboard.module.css */
+
+/* ── Section wrapper ──────────────────────────────────────────────────────── */
+.section {
+  margin-bottom: 20px;
+}
+
+.sectionLabel {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  color: rgba(255,255,255,0.25);
+  margin: 0 2px 9px;
+}
+
+.sectionHeaderRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 9px;
+}
+
+/* ════════════════════════════════════════════════════════════════════════════
+   CREATOR PROFILE CARD
+   ════════════════════════════════════════════════════════════════════════════ */
+.profileCard {
+  background: linear-gradient(145deg, rgba(99,102,241,0.1), rgba(139,92,246,0.07));
+  border: 1px solid rgba(99,102,241,0.22);
+  border-radius: 20px;
+  padding: 16px 14px 14px;
+  margin-bottom: 18px;
+  animation: fadeUp 0.4s ease both;
+}
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.profileTop {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 12px;
+}
+
+/* Avatar */
+.avatar {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: 900;
+  color: #fff;
+  flex-shrink: 0;
+  letter-spacing: 0.03em;
+  box-shadow: 0 0 0 3px rgba(99,102,241,0.25), 0 0 12px rgba(99,102,241,0.2);
+}
+
+.profileInfo {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.profileName {
+  font-size: 16px;
+  font-weight: 800;
+  color: #e8eaf0;
+  line-height: 1.2;
+}
+
+.profileHandle {
+  font-size: 11px;
+  color: rgba(165,180,252,0.6);
+  font-weight: 600;
+}
+
+.profileGenres {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-top: 2px;
+}
+
+.genreTag {
+  font-size: 9px;
+  font-weight: 700;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  padding: 2px 7px;
+  border-radius: 8px;
+  color: rgba(255,255,255,0.45);
+  letter-spacing: 0.03em;
+}
+
+/* AI learning level badge */
+.aiLevelBadge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  flex-shrink: 0;
+}
+
+.aiLevelRing {
+  position: relative;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.aiLevelRing svg {
+  position: absolute;
+  inset: 0;
+  transform: rotate(-90deg);
+  filter: drop-shadow(0 0 6px rgba(99,102,241,0.3));
+}
+
+.aiLevelVal {
+  position: relative;
+  z-index: 2;
+  font-size: 14px;
+  font-weight: 900;
+  color: #a5b4fc;
+  line-height: 1;
+}
+
+.aiLevelLbl {
+  font-size: 8px;
+  font-weight: 700;
+  color: rgba(165,180,252,0.4);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+/* Profile stats row */
+.profileStats {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 12px;
+  padding: 8px 10px;
+}
+
+.profileStat {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.profileStatVal {
+  font-size: 16px;
+  font-weight: 900;
+  color: #e8eaf0;
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+
+.profileStatLbl {
+  font-size: 8px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.25);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  text-align: center;
+}
+
+.profileStatSep {
+  width: 1px;
+  height: 26px;
+  background: rgba(255,255,255,0.08);
+  flex-shrink: 0;
+}
+
+/* ════════════════════════════════════════════════════════════════════════════
+   STAT CARDS GRID
+   ════════════════════════════════════════════════════════════════════════════ */
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+}
+
+.statCard {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 14px;
+  padding: 12px 12px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  animation: cardIn 0.3s ease both;
+  transition: border-color 0.2s, background 0.2s;
+}
+.statCard:hover {
+  border-color: rgba(99,102,241,0.22);
+  background: rgba(99,102,241,0.04);
+}
+@keyframes cardIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.statCardTop {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.statCardIcon {
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+.statCardVal {
+  font-size: 22px;
+  font-weight: 900;
+  color: #e8eaf0;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  flex: 1;
+}
+
+.statCardLbl {
+  font-size: 10px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.3);
+  letter-spacing: 0.03em;
+}
+
+/* Progress bar inside stat card */
+.statCardBar {
+  height: 3px;
+  background: rgba(255,255,255,0.06);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.statCardBarFill {
+  height: 100%;
+  border-radius: 2px;
+  animation: growBar 0.8s ease both;
+}
+@keyframes growBar {
+  from { width: 0 !important; }
+}
+
+/* ════════════════════════════════════════════════════════════════════════════
+   STYLE CARDS (Favourite Styles)
+   ════════════════════════════════════════════════════════════════════════════ */
+.stylesRow {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  padding-bottom: 4px;
+}
+.stylesRow::-webkit-scrollbar { display: none; }
+
+.styleCard {
+  flex-shrink: 0;
+  width: 120px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 14px;
+  padding: 12px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  animation: cardIn 0.3s ease both;
+  transition: border-color 0.2s;
+}
+.styleCard:hover { border-color: rgba(99,102,241,0.25); }
+
+.styleCardIcon {
+  font-size: 24px;
+  line-height: 1;
+}
+
+.styleCardTitle {
+  font-size: 11px;
+  font-weight: 800;
+  color: #e8eaf0;
+  text-align: center;
+  line-height: 1.25;
+}
+
+.styleCardSub {
+  font-size: 9px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.3);
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.styleUsage {
+  font-size: 9px;
+  font-weight: 700;
+  color: rgba(165,180,252,0.6);
+  background: rgba(99,102,241,0.1);
+  border: 1px solid rgba(99,102,241,0.2);
+  padding: 2px 8px;
+  border-radius: 8px;
+}
+
+/* ════════════════════════════════════════════════════════════════════════════
+   PREFERENCES LIST
+   ════════════════════════════════════════════════════════════════════════════ */
+.prefCard {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.prefRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+}
+
+.prefDivider {
+  height: 1px;
+  background: rgba(255,255,255,0.04);
+  margin: 0 14px;
+}
+
+.prefIcon {
+  font-size: 14px;
+  width: 20px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.prefLabelGroup {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.prefLabel {
+  font-size: 12px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.4);
+}
+
+.prefSub {
+  font-size: 9px;
+  color: rgba(255,255,255,0.2);
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.prefValue {
+  font-size: 12px;
+  font-weight: 800;
+  color: #e8eaf0;
+  text-align: right;
+  max-width: 130px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.aiLearnedDot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #6366f1;
+  flex-shrink: 0;
+  box-shadow: 0 0 4px rgba(99,102,241,0.8);
+  animation: dotPulse 2s ease-in-out infinite;
+}
+@keyframes dotPulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.3; }
+}
+
+/* ════════════════════════════════════════════════════════════════════════════
+   MILESTONES
+   ════════════════════════════════════════════════════════════════════════════ */
+.milestonesGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.milestoneCard {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 14px;
+  padding: 12px 12px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  animation: cardIn 0.3s ease both;
+  transition: border-color 0.2s;
+}
+
+.milestoneCardAchieved {
+  background: rgba(34,197,94,0.05);
+  border-color: rgba(34,197,94,0.2);
+}
+
+.milestoneTop {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.milestoneIconWrap {
+  width: 38px;
+  height: 38px;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+.milestoneIconWrapAchieved {
+  background: rgba(34,197,94,0.1);
+  border-color: rgba(34,197,94,0.22);
+}
+
+.milestoneMeta {
+  flex: 1;
+  min-width: 0;
+}
+
+.milestoneTitle {
+  font-size: 13px;
+  font-weight: 800;
+  color: #e8eaf0;
+  line-height: 1.2;
+}
+
+.milestoneDesc {
+  font-size: 11px;
+  color: rgba(255,255,255,0.35);
+  line-height: 1.5;
+  margin: 2px 0 0;
+}
+
+.milestoneStatus {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 2px;
+}
+
+.milestoneAchievedBadge {
+  font-size: 9px;
+  font-weight: 800;
+  color: #4ade80;
+  background: rgba(34,197,94,0.12);
+  border: 1px solid rgba(34,197,94,0.25);
+  padding: 3px 8px;
+  border-radius: 8px;
+}
+
+.milestoneDate {
+  font-size: 9px;
+  color: rgba(255,255,255,0.2);
+  font-weight: 600;
+}
+
+.milestoneProgressRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.milestoneProgressTrack {
+  flex: 1;
+  height: 5px;
+  background: rgba(255,255,255,0.06);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.milestoneProgressFill {
+  height: 100%;
+  border-radius: 3px;
+  animation: growBar 0.9s ease both;
+}
+
+.milestonePct {
+  font-size: 10px;
+  font-weight: 800;
+  color: rgba(255,255,255,0.4);
+  width: 30px;
+  text-align: right;
+  flex-shrink: 0;
+}
+
+/* ════════════════════════════════════════════════════════════════════════════
+   FAVOURITE WORKFLOWS
+   ════════════════════════════════════════════════════════════════════════════ */
+.workflowList {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.workflowCard {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 12px;
+  padding: 10px 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  animation: cardIn 0.28s ease both;
+  transition: border-color 0.2s;
+}
+.workflowCard:hover { border-color: rgba(99,102,241,0.22); }
+
+.workflowIcon {
+  font-size: 20px;
+  flex-shrink: 0;
+}
+
+.workflowMeta {
+  flex: 1;
+  min-width: 0;
+}
+
+.workflowName {
+  font-size: 12px;
+  font-weight: 800;
+  color: #e8eaf0;
+}
+
+.workflowSub {
+  font-size: 10px;
+  color: rgba(255,255,255,0.3);
+}
+
+.workflowStats {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 2px;
+  flex-shrink: 0;
+}
+
+.workflowUsage {
+  font-size: 11px;
+  font-weight: 800;
+  color: #a5b4fc;
+}
+
+.workflowGain {
+  font-size: 10px;
+  font-weight: 700;
+  color: #4ade80;
+}
+
+/* ════════════════════════════════════════════════════════════════════════════
+   PATTERNS ROW
+   ════════════════════════════════════════════════════════════════════════════ */
+.patternList {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.patternCard {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 13px;
+  padding: 11px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  animation: cardIn 0.3s ease both;
+}
+
+.patternTop {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.patternTypeBadge {
+  font-size: 9px;
+  font-weight: 700;
+  background: rgba(99,102,241,0.1);
+  border: 1px solid rgba(99,102,241,0.22);
+  color: #a5b4fc;
+  padding: 2px 7px;
+  border-radius: 8px;
+  flex-shrink: 0;
+  letter-spacing: 0.04em;
+}
+
+.patternTitle {
+  font-size: 12px;
+  font-weight: 800;
+  color: #e8eaf0;
+  flex: 1;
+  line-height: 1.3;
+}
+
+.patternConfRow {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.patternConfTrack {
+  flex: 1;
+  height: 3px;
+  background: rgba(255,255,255,0.06);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.patternConfFill {
+  height: 100%;
+  background: linear-gradient(90deg, #6366f1, #8b5cf6);
+  border-radius: 2px;
+  animation: growBar 0.8s ease both;
+}
+
+.patternConfPct {
+  font-size: 10px;
+  font-weight: 800;
+  color: #a5b4fc;
+  width: 30px;
+  text-align: right;
+  flex-shrink: 0;
+}
+
+.patternDesc {
+  font-size: 11px;
+  color: rgba(255,255,255,0.35);
+  line-height: 1.5;
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* ── Streak card ──────────────────────────────────────────────────────────── */
+.streakCard {
+  background: linear-gradient(135deg, rgba(245,158,11,0.09), rgba(234,88,12,0.06));
+  border: 1px solid rgba(245,158,11,0.2);
+  border-radius: 14px;
+  padding: 14px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 18px;
+}
+
+.streakIcon {
+  font-size: 32px;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.streakMeta {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.streakTitle {
+  font-size: 14px;
+  font-weight: 800;
+  color: #fcd34d;
+  line-height: 1.2;
+}
+
+.streakSub {
+  font-size: 11px;
+  color: rgba(255,255,255,0.35);
+}
+
+.streakVal {
+  font-size: 28px;
+  font-weight: 900;
+  color: #fcd34d;
+  line-height: 1;
+  letter-spacing: -0.05em;
+  flex-shrink: 0;
+}
+
+.streakDays {
+  font-size: 9px;
+  font-weight: 700;
+  color: rgba(252,211,77,0.5);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}

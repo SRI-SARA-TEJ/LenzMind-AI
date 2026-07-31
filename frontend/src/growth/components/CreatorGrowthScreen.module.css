@@ -1,0 +1,682 @@
+/* CreatorGrowthScreen.module.css
+ *
+ * Module 10.4 — Realis Creator Growth Engine
+ *
+ * Design language — identical to the established Realis dark theme:
+ *   Background  #0f1117
+ *   Accent      #6366f1  (indigo)
+ *   Green       #4ade80  (completed / positive)
+ *   Amber       #fcd34d  (steady / caution)
+ *   Red         #f87171  (declining / negative)
+ *   Purple      #a78bfa  (secondary accent)
+ *   Text        #e8eaf0
+ *   Muted       rgba(255,255,255,0.28–0.4)
+ *   Surface     rgba(255,255,255,0.03–0.06)
+ *   Border      rgba(255,255,255,0.07–0.1)
+ *
+ * Mobile-first single-column layout, 14px lateral padding.
+ */
+
+/* ════════════════════════════════════════════════════════════════════════════
+   SCREEN SHELL
+   ════════════════════════════════════════════════════════════════════════════ */
+.screen {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: #0f1117;
+  overflow: hidden;
+  font-family: -apple-system, 'Segoe UI', system-ui, sans-serif;
+  color: #e8eaf0;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ════════════════════════════════════════════════════════════════════════════
+   HEADER
+   ════════════════════════════════════════════════════════════════════════════ */
+.header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 14px 16px 10px;
+  flex-shrink: 0;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+.headerLeft {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.ibmBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3px 10px;
+  background: rgba(99,102,241,0.1);
+  border: 1px solid rgba(99,102,241,0.28);
+  border-radius: 20px;
+  font-size: 9px;
+  font-weight: 800;
+  color: #a5b4fc;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+  width: fit-content;
+}
+
+.ibmDot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #6366f1;
+  box-shadow: 0 0 6px rgba(99,102,241,0.9);
+  flex-shrink: 0;
+  animation: ibmPulse 2s ease-in-out infinite;
+}
+
+@keyframes ibmPulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.3; }
+}
+
+.headerTitle {
+  font-size: 20px;
+  font-weight: 800;
+  color: #e8eaf0;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.headerSub {
+  font-size: 11px;
+  color: rgba(255,255,255,0.3);
+  margin: 0;
+}
+
+.refreshBtn {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.09);
+  color: rgba(255,255,255,0.45);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: background 0.15s, color 0.15s;
+  -webkit-tap-highlight-color: transparent;
+}
+.refreshBtn:hover:not(:disabled) {
+  background: rgba(99,102,241,0.12);
+  color: #a5b4fc;
+  border-color: rgba(99,102,241,0.25);
+}
+.refreshBtn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+.refreshSpin {
+  animation: spin 0.8s linear infinite;
+}
+
+/* ════════════════════════════════════════════════════════════════════════════
+   SCROLLABLE CONTENT
+   ════════════════════════════════════════════════════════════════════════════ */
+.scroll {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+  padding: 16px 14px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* ── Loading skeleton ─────────────────────────────────────────────────────── */
+.skeleton {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 4px 0;
+}
+
+.skeletonBar {
+  height: 14px;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.06);
+  animation: shimmer 1.4s ease-in-out infinite;
+}
+.skeletonBarWide   { width: 85%; }
+.skeletonBarMed    { width: 65%; }
+.skeletonBarNarrow { width: 45%; }
+
+@keyframes shimmer {
+  0%, 100% { opacity: 0.4; }
+  50%       { opacity: 0.9; }
+}
+
+/* ════════════════════════════════════════════════════════════════════════════
+   SCORE HERO
+   ════════════════════════════════════════════════════════════════════════════ */
+.scoreHero {
+  position: relative;
+  background: linear-gradient(145deg, rgba(99,102,241,0.08), rgba(139,92,246,0.05));
+  border: 1px solid rgba(99,102,241,0.18);
+  border-radius: 22px;
+  padding: 20px 18px 18px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  overflow: hidden;
+  animation: fadeUp 0.35s ease both;
+}
+
+.scoreHeroGlow {
+  position: absolute;
+  top: -40px;
+  right: -40px;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(99,102,241,0.15) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.scoreArcWrap {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.arcSvg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.scoreInner {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1px;
+}
+
+.scoreVal {
+  font-size: 30px;
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: -0.04em;
+}
+
+.scoreUnit {
+  font-size: 10px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.28);
+}
+
+.scoreInfo {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.planTitle {
+  font-size: 15px;
+  font-weight: 800;
+  color: #e8eaf0;
+  margin: 0;
+  line-height: 1.3;
+}
+
+.trajectoryBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 10px;
+  border-radius: 20px;
+  border-width: 1px;
+  border-style: solid;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  width: fit-content;
+}
+
+.scoreDelta {
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+}
+
+.scoreTime {
+  font-size: 10px;
+  color: rgba(255,255,255,0.22);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ════════════════════════════════════════════════════════════════════════════
+   XP PROGRESS CARD
+   ════════════════════════════════════════════════════════════════════════════ */
+.xpCard {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 18px;
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  animation: fadeUp 0.38s ease 0.04s both;
+}
+
+.xpHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.xpLeft, .xpRight {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.xpRight {
+  align-items: flex-end;
+}
+
+.xpCurrentLabel, .xpNextLabel {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: rgba(255,255,255,0.3);
+}
+
+.xpCurrentVal {
+  font-size: 18px;
+  font-weight: 900;
+  color: #a78bfa;
+  letter-spacing: -0.02em;
+}
+
+.xpNextVal {
+  font-size: 12px;
+  font-weight: 700;
+  color: rgba(255,255,255,0.6);
+  text-align: right;
+}
+
+.xpTrack {
+  height: 6px;
+  border-radius: 4px;
+  background: rgba(255,255,255,0.07);
+  overflow: hidden;
+}
+
+.xpFill {
+  height: 100%;
+  border-radius: 4px;
+  background: linear-gradient(90deg, #6366f1, #a78bfa);
+  transition: width 1s ease;
+}
+
+.xpFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.xpPct {
+  font-size: 11px;
+  font-weight: 700;
+  color: #a5b4fc;
+}
+
+.xpRemaining {
+  font-size: 11px;
+  color: rgba(255,255,255,0.35);
+  font-weight: 500;
+}
+
+/* ════════════════════════════════════════════════════════════════════════════
+   PLAN OVERVIEW CARD
+   ════════════════════════════════════════════════════════════════════════════ */
+.overviewCard {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 18px;
+  padding: 14px 16px;
+  animation: fadeUp 0.38s ease 0.06s both;
+}
+
+.overviewRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.overviewCell {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  flex: 1;
+}
+
+.overviewVal {
+  font-size: 20px;
+  font-weight: 900;
+  color: #e8eaf0;
+  letter-spacing: -0.02em;
+}
+
+.overviewLbl {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: rgba(255,255,255,0.3);
+}
+
+.overviewDiv {
+  width: 1px;
+  height: 36px;
+  background: rgba(255,255,255,0.08);
+  flex-shrink: 0;
+}
+
+/* ════════════════════════════════════════════════════════════════════════════
+   GROWTH INSIGHT CARD
+   ════════════════════════════════════════════════════════════════════════════ */
+.insightCard {
+  background: linear-gradient(145deg, rgba(99,102,241,0.08), rgba(139,92,246,0.05));
+  border: 1px solid rgba(99,102,241,0.2);
+  border-radius: 18px;
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  animation: fadeUp 0.38s ease 0.08s both;
+}
+
+.insightHeader {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.insightIcon {
+  font-size: 16px;
+  color: #a5b4fc;
+  line-height: 1;
+}
+
+.insightTitle {
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: #a5b4fc;
+}
+
+.insightText {
+  font-size: 13px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.78);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ════════════════════════════════════════════════════════════════════════════
+   SECTION SHELL
+   ════════════════════════════════════════════════════════════════════════════ */
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  animation: fadeUp 0.38s ease both;
+}
+
+.sectionLabel {
+  font-size: 10px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  color: rgba(255,255,255,0.28);
+  margin: 0;
+}
+
+/* ════════════════════════════════════════════════════════════════════════════
+   MILESTONES
+   ════════════════════════════════════════════════════════════════════════════ */
+.milestonesList {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.milestoneRow {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  width: 100%;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 14px;
+  padding: 12px 13px;
+  cursor: pointer;
+  text-align: left;
+  transition: background 0.15s, border-color 0.15s;
+  -webkit-tap-highlight-color: transparent;
+  animation: fadeUp 0.3s ease both;
+  color: #e8eaf0;
+}
+
+.milestoneRow:hover:not(:disabled) {
+  background: rgba(99,102,241,0.08);
+  border-color: rgba(99,102,241,0.2);
+}
+
+.milestoneRowDone {
+  opacity: 0.55;
+  cursor: default;
+  border-color: rgba(74,222,128,0.2);
+}
+
+.milestoneCheck {
+  font-size: 14px;
+  font-weight: 700;
+  color: rgba(255,255,255,0.25);
+  flex-shrink: 0;
+  width: 18px;
+  text-align: center;
+  line-height: 1;
+  margin-top: 2px;
+}
+
+.milestoneRowDone .milestoneCheck {
+  color: #4ade80;
+}
+
+.milestoneMeta {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.milestoneTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+}
+
+.milestoneLabel {
+  font-size: 13px;
+  font-weight: 800;
+  color: #e8eaf0;
+}
+
+.milestoneDays {
+  font-size: 10px;
+  font-weight: 700;
+  color: rgba(255,255,255,0.3);
+  flex-shrink: 0;
+  letter-spacing: 0.04em;
+}
+
+.milestoneDesc {
+  font-size: 11px;
+  color: rgba(255,255,255,0.45);
+  line-height: 1.5;
+  margin: 0;
+  font-weight: 500;
+}
+
+.milestoneTrack {
+  height: 4px;
+  border-radius: 3px;
+  background: rgba(255,255,255,0.07);
+  overflow: hidden;
+}
+
+.milestoneFill {
+  height: 100%;
+  border-radius: 3px;
+  transition: width 0.8s ease;
+}
+
+.milestoneFooter {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.milestoneCurrent {
+  font-size: 11px;
+  font-weight: 700;
+  color: rgba(255,255,255,0.5);
+}
+
+.milestoneSep {
+  font-size: 10px;
+  color: rgba(255,255,255,0.2);
+}
+
+.milestoneTarget {
+  font-size: 11px;
+  color: rgba(255,255,255,0.3);
+  font-weight: 600;
+}
+
+.milestonePct {
+  font-size: 10px;
+  font-weight: 700;
+  color: #a5b4fc;
+  margin-left: auto;
+}
+
+/* ════════════════════════════════════════════════════════════════════════════
+   SKILL GAPS
+   ════════════════════════════════════════════════════════════════════════════ */
+.skillGapsList {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.skillGapRow {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 14px;
+  padding: 12px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  animation: fadeUp 0.3s ease both;
+}
+
+.skillGapHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+}
+
+.skillGapName {
+  font-size: 13px;
+  font-weight: 800;
+  color: #e8eaf0;
+}
+
+.skillGapLevels {
+  font-size: 11px;
+  font-weight: 700;
+  color: rgba(255,255,255,0.35);
+  flex-shrink: 0;
+}
+
+.skillGapDetail {
+  font-size: 11px;
+  color: rgba(255,255,255,0.45);
+  line-height: 1.5;
+  margin: 0;
+  font-weight: 500;
+}
+
+.skillGapTrack {
+  position: relative;
+  height: 5px;
+  border-radius: 4px;
+  background: rgba(255,255,255,0.06);
+  overflow: hidden;
+}
+
+/* Target level — shown as faint background fill */
+.skillGapTarget {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  border-radius: 4px;
+  background: rgba(99,102,241,0.2);
+  transition: width 0.8s ease;
+}
+
+/* Current level — shown as solid foreground fill */
+.skillGapCurrent {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  border-radius: 4px;
+  background: #6366f1;
+  transition: width 0.8s ease;
+}

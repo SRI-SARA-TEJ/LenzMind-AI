@@ -1,0 +1,178 @@
+/* ProjectLibraryScreen.module.css */
+
+/* ── Full-screen layout ──────────────────────────────────────────────────────── */
+.screen {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: #0f1117;
+  overflow: hidden;
+  position: relative;
+}
+
+/* ── Top bar ─────────────────────────────────────────────────────────────────── */
+.topBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 16px 12px;
+  flex-shrink: 0;
+}
+
+.topTitle {
+  font-size: 22px;
+  font-weight: 800;
+  color: #e8eaf0;
+  margin: 0;
+}
+
+.topSubtitle {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.3);
+  margin: 2px 0 0;
+}
+
+.topBadge {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 10px;
+  background: rgba(34, 197, 94, 0.1);
+  border: 1px solid rgba(34, 197, 94, 0.2);
+  border-radius: 20px;
+  font-size: 10px;
+  font-weight: 700;
+  color: #4ade80;
+  letter-spacing: 0.06em;
+}
+
+.aiBadgeDot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #22c55e;
+  box-shadow: 0 0 5px #22c55e;
+}
+
+/* ── Spacer wrappers ─────────────────────────────────────────────────────────── */
+.dashWrap {
+  flex-shrink: 0;
+  padding-bottom: 12px;
+}
+
+.searchWrap {
+  flex-shrink: 0;
+  padding-bottom: 8px;
+}
+
+/* ── Scrollable content ──────────────────────────────────────────────────────── */
+.content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 8px 0 0;
+}
+
+/* ── Sections ────────────────────────────────────────────────────────────────── */
+.section {
+  margin-bottom: 20px;
+}
+
+.sectionHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px 10px;
+}
+
+.sectionTitle {
+  font-size: 13px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.55);
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.sectionTitleAccent {
+  background: linear-gradient(135deg, #fbbf24, #f59e0b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.sectionCount {
+  font-size: 12px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.05);
+  padding: 2px 8px;
+  border-radius: 20px;
+}
+
+.sectionSub {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.3);
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+/* ── Grid layout ─────────────────────────────────────────────────────────────── */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  padding: 0 16px;
+}
+
+/* ── List layout ─────────────────────────────────────────────────────────────── */
+.list {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Horizontal favorites strip ──────────────────────────────────────────────── */
+.hScroll {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  padding: 0 16px 4px;
+  scrollbar-width: none;
+}
+.hScroll::-webkit-scrollbar { display: none; }
+
+.hCard {
+  min-width: 160px;
+  flex-shrink: 0;
+}
+
+/* ── FAB ──────────────────────────────────────────────────────────────────────── */
+.fab {
+  position: absolute;
+  bottom: calc(env(safe-area-inset-bottom, 0px) + 72px);
+  right: 16px;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 16px;
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  border: none;
+  border-radius: 22px;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(99, 102, 241, 0.45);
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+
+.fab:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(99, 102, 241, 0.55);
+}
+
+.fab:active { transform: scale(0.96); }

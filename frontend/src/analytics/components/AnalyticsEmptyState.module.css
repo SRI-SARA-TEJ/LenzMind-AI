@@ -1,0 +1,156 @@
+/* AnalyticsEmptyState.module.css */
+
+.root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 20px 20px 28px;
+  text-align: center;
+  animation: fadeUp 0.4s ease both;
+}
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Illustration ─────────────────────────────────────────────────────────── */
+.illustration {
+  width: 180px;
+  height: 124px;
+  margin-bottom: 2px;
+}
+
+.bar {
+  transform-origin: bottom;
+  animation: growBar 0.7s ease both;
+}
+@keyframes growBar {
+  from { transform: scaleY(0); }
+  to   { transform: scaleY(1); }
+}
+
+.trendLine {
+  stroke-dasharray: 300;
+  stroke-dashoffset: 300;
+  animation: drawLine 1.2s ease 0.4s forwards;
+}
+@keyframes drawLine {
+  to { stroke-dashoffset: 0; }
+}
+
+.trendDot {
+  opacity: 0;
+  animation: dotFade 0.3s ease both;
+}
+@keyframes dotFade {
+  to { opacity: 1; }
+}
+
+.ibmDotAnim {
+  animation: ibmPulse 2s ease-in-out infinite;
+}
+@keyframes ibmPulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.3; }
+}
+
+/* ── IBM badge ──────────────────────────────────────────────────────────────── */
+.ibmBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3px 12px;
+  background: rgba(99,102,241,0.1);
+  border: 1px solid rgba(99,102,241,0.28);
+  border-radius: 20px;
+  font-size: 9px;
+  font-weight: 800;
+  color: #a5b4fc;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+.ibmDot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #6366f1;
+  box-shadow: 0 0 6px rgba(99,102,241,0.9);
+  flex-shrink: 0;
+  animation: ibmPulse 2s ease-in-out infinite;
+}
+
+/* ── Text ─────────────────────────────────────────────────────────────────── */
+.title {
+  font-size: 20px;
+  font-weight: 800;
+  color: #e8eaf0;
+  margin: 0;
+  line-height: 1.25;
+}
+
+.sub {
+  font-size: 12px;
+  color: rgba(255,255,255,0.38);
+  line-height: 1.65;
+  margin: 0;
+  max-width: 300px;
+}
+
+/* ── Feature list ─────────────────────────────────────────────────────────── */
+.featureList {
+  width: 100%;
+  max-width: 320px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 2px;
+}
+
+.featureItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 12px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 10px;
+  text-align: left;
+}
+
+.featureIcon {
+  font-size: 15px;
+  flex-shrink: 0;
+}
+
+.featureLabel {
+  font-size: 12px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.5);
+}
+
+/* ── CTA button ───────────────────────────────────────────────────────────── */
+.ctaBtn {
+  margin-top: 4px;
+  padding: 13px 32px;
+  border-radius: 14px;
+  font-size: 13px;
+  font-weight: 800;
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  transition: opacity 0.15s, transform 0.1s;
+  box-shadow: 0 4px 20px rgba(99,102,241,0.4);
+  letter-spacing: 0.02em;
+}
+.ctaBtn:hover  { opacity: 0.88; transform: translateY(-1px); }
+.ctaBtn:active { transform: scale(0.97); }
+
+/* ── Privacy ──────────────────────────────────────────────────────────────── */
+.privacy {
+  font-size: 10px;
+  color: rgba(255,255,255,0.2);
+  margin: 0;
+}

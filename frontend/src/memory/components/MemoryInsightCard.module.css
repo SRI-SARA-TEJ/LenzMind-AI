@@ -1,0 +1,240 @@
+/* MemoryInsightCard.module.css */
+
+/* ── Card wrapper ─────────────────────────────────────────────────────────── */
+.card {
+  border-radius: 16px;
+  border: 1px solid;
+  padding: 14px 12px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  animation: cardIn 0.3s ease both;
+  transition: filter 0.15s;
+}
+.card:hover { filter: brightness(1.06); }
+@keyframes cardIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Top row ──────────────────────────────────────────────────────────────── */
+.topRow {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.iconWrap {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.icon { font-size: 17px; }
+
+.titleGroup {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.titleRow {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.title {
+  font-size: 13px;
+  font-weight: 800;
+  color: #e8eaf0;
+  line-height: 1.25;
+  flex: 1;
+}
+
+/* Animated AI indicator dot */
+.aiDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  animation: aiPulse 1.8s ease-in-out infinite;
+  box-shadow: 0 0 5px currentColor;
+}
+@keyframes aiPulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.4; transform: scale(0.7); }
+}
+
+.metaRow {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.typeBadge {
+  font-size: 9px;
+  font-weight: 700;
+  color: rgba(255,255,255,0.3);
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.08);
+  padding: 2px 7px;
+  border-radius: 8px;
+  letter-spacing: 0.04em;
+}
+
+.priorityBadge {
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+}
+
+/* Dismiss button */
+.dismissBtn {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.08);
+  color: rgba(255,255,255,0.3);
+  font-size: 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s, color 0.15s;
+}
+.dismissBtn:hover { background: rgba(248,113,113,0.12); color: #f87171; }
+
+/* ── Body ─────────────────────────────────────────────────────────────────── */
+.body {
+  font-size: 12px;
+  color: rgba(255,255,255,0.5);
+  line-height: 1.65;
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  transition: all 0.2s ease;
+}
+
+.bodyExpanded {
+  display: block;
+  -webkit-line-clamp: unset;
+  overflow: visible;
+}
+
+.expandBtn {
+  background: none;
+  border: none;
+  font-size: 10px;
+  font-weight: 700;
+  color: rgba(165,180,252,0.6);
+  cursor: pointer;
+  padding: 0;
+  align-self: flex-start;
+  letter-spacing: 0.03em;
+  transition: color 0.15s;
+}
+.expandBtn:hover { color: #a5b4fc; }
+
+/* ── AI Confidence bar ────────────────────────────────────────────────────── */
+.confRow {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.confLabel {
+  font-size: 9px;
+  font-weight: 700;
+  color: rgba(255,255,255,0.28);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  flex-shrink: 0;
+  width: 82px;
+}
+
+.confTrack {
+  flex: 1;
+  height: 4px;
+  background: rgba(255,255,255,0.06);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.confFill {
+  height: 100%;
+  border-radius: 3px;
+  transition: width 0.7s ease;
+  animation: growBar 0.8s ease both;
+}
+@keyframes growBar {
+  from { width: 0 !important; }
+}
+
+.confPct {
+  font-size: 10px;
+  font-weight: 800;
+  width: 30px;
+  text-align: right;
+  flex-shrink: 0;
+}
+
+/* ── Expected impact ──────────────────────────────────────────────────────── */
+.impactRow {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.impactIcon {
+  font-size: 12px;
+  color: rgba(255,255,255,0.2);
+}
+
+.impactText {
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+/* ── Footer ───────────────────────────────────────────────────────────────── */
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-top: 2px;
+}
+
+.genDate {
+  font-size: 9px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.2);
+  letter-spacing: 0.03em;
+}
+
+.actionBtn {
+  padding: 5px 12px;
+  border-radius: 8px;
+  font-size: 10px;
+  font-weight: 800;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid;
+  cursor: pointer;
+  transition: filter 0.15s;
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+}
+.actionBtn:hover { filter: brightness(1.3); }

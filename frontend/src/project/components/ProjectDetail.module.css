@@ -1,0 +1,630 @@
+/* ProjectDetail.module.css */
+
+/* ── Full-screen overlay ─────────────────────────────────────────────────────── */
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  background: #0f1117;
+  display: flex;
+  flex-direction: column;
+  animation: slideInRight 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+@keyframes slideInRight {
+  from { transform: translateX(100%); }
+  to   { transform: translateX(0); }
+}
+
+.screen {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* ── Hero cover ──────────────────────────────────────────────────────────────── */
+.hero {
+  flex-shrink: 0;
+  padding: 0;
+  position: relative;
+  min-height: 140px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.heroTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 14px 0;
+}
+
+.backBtn {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.heroFav {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  transition: color 0.15s;
+}
+
+.heroFavActive { color: #fbbf24; }
+
+.heroBody {
+  display: flex;
+  align-items: flex-end;
+  gap: 12px;
+  padding: 12px 16px 16px;
+}
+
+.heroEmoji {
+  font-size: 44px;
+  filter: drop-shadow(0 2px 12px rgba(0,0,0,0.6));
+}
+
+.heroInfo {
+  flex: 1;
+  min-width: 0;
+}
+
+.heroTitle {
+  font-size: 18px;
+  font-weight: 800;
+  color: #fff;
+  line-height: 1.3;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+  margin: 0 0 6px;
+}
+
+.heroBadges {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.heroCat {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: rgba(255, 255, 255, 0.65);
+  background: rgba(0, 0, 0, 0.3);
+  padding: 2px 8px;
+  border-radius: 20px;
+}
+
+.heroStatus {
+  font-size: 10px;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 20px;
+  letter-spacing: 0.04em;
+}
+
+/* ── Tab bar ──────────────────────────────────────────────────────────────────── */
+.tabBar {
+  flex-shrink: 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+  background: #0f1117;
+}
+
+.tabScroll {
+  display: flex;
+  overflow-x: auto;
+  padding: 0 8px;
+  scrollbar-width: none;
+}
+.tabScroll::-webkit-scrollbar { display: none; }
+
+.tab {
+  flex-shrink: 0;
+  padding: 10px 12px;
+  font-size: 12px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.4);
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: color 0.15s;
+  margin-bottom: -1px;
+}
+
+.tab:hover { color: rgba(255, 255, 255, 0.7); }
+
+.tabActive {
+  color: #a5b4fc;
+  border-bottom-color: #6366f1;
+}
+
+/* ── Scrollable body ─────────────────────────────────────────────────────────── */
+.body {
+  flex: 1;
+  overflow-y: auto;
+}
+
+.tabContent {
+  padding: 4px 0;
+}
+
+/* ── Section block ───────────────────────────────────────────────────────────── */
+.section {
+  padding: 14px 16px 0;
+  margin-bottom: 4px;
+}
+
+.sectionTitle {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: rgba(255, 255, 255, 0.25);
+  margin: 0 0 10px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* ── Row ─────────────────────────────────────────────────────────────────────── */
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.rowLabel {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.rowValue {
+  font-size: 12px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.75);
+  text-align: right;
+}
+
+.statusInline {
+  font-size: 10px;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 20px;
+}
+
+/* ── Description ─────────────────────────────────────────────────────────────── */
+.description {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.5);
+  line-height: 1.6;
+}
+
+/* ── Tags ─────────────────────────────────────────────────────────────────────── */
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.tag {
+  padding: 4px 10px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* ── Progress ────────────────────────────────────────────────────────────────── */
+.bigProgressWrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.bigProgressTrack {
+  flex: 1;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 99px;
+  overflow: hidden;
+}
+
+.bigProgressBar {
+  height: 100%;
+  background: linear-gradient(90deg, #6366f1, #8b5cf6);
+  border-radius: 99px;
+  transition: width 0.4s ease;
+}
+
+.bigProgressLabel {
+  font-size: 13px;
+  font-weight: 700;
+  color: #a5b4fc;
+  min-width: 36px;
+  text-align: right;
+}
+
+/* ── Media grid ──────────────────────────────────────────────────────────────── */
+.mediaGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.mediaCard {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 12px;
+  padding: 10px 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.mediaIcon { font-size: 18px; }
+.mediaCount {
+  font-size: 16px;
+  font-weight: 800;
+  color: #e8eaf0;
+}
+.mediaLabel {
+  font-size: 9px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: rgba(255, 255, 255, 0.3);
+}
+
+/* ── Breakdown ───────────────────────────────────────────────────────────────── */
+.breakdown { display: flex; flex-direction: column; gap: 8px; }
+
+.breakdownRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.breakdownLabel {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.4);
+  min-width: 48px;
+}
+
+.breakdownTrack {
+  flex: 1;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.07);
+  border-radius: 99px;
+  overflow: hidden;
+}
+
+.breakdownBar {
+  height: 100%;
+  border-radius: 99px;
+  transition: width 0.3s ease;
+}
+
+.breakdownPct {
+  font-size: 11px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.35);
+  min-width: 30px;
+  text-align: right;
+}
+
+/* ── Workflow card ───────────────────────────────────────────────────────────── */
+.workflowCard {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(99, 102, 241, 0.08);
+  border: 1px solid rgba(99, 102, 241, 0.2);
+  border-radius: 12px;
+  padding: 12px;
+}
+
+.workflowIcon { font-size: 22px; }
+
+.workflowInfo {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.workflowName {
+  font-size: 13px;
+  font-weight: 700;
+  color: #e8eaf0;
+}
+
+.workflowId {
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.workflowBadge {
+  font-size: 10px;
+  font-weight: 700;
+  color: #4ade80;
+  background: rgba(34, 197, 94, 0.12);
+  padding: 3px 8px;
+  border-radius: 20px;
+  border: 1px solid rgba(34, 197, 94, 0.25);
+}
+
+.noWorkflow {
+  padding: 16px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px dashed rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.noWorkflowText {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.5);
+  font-weight: 600;
+}
+
+.noWorkflowSub {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.25);
+  line-height: 1.5;
+}
+
+/* ── Timeline ─────────────────────────────────────────────────────────────────── */
+.timeline { display: flex; flex-direction: column; }
+
+.timelineEntry {
+  display: flex;
+  gap: 12px;
+}
+
+.timelineDotWrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 16px;
+  flex-shrink: 0;
+}
+
+.timelineDot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin-top: 3px;
+  flex-shrink: 0;
+}
+
+.dotComplete { background: #22c55e; }
+.dotPending  { background: rgba(255, 255, 255, 0.12); border: 1px solid rgba(255,255,255,0.2); }
+
+.timelineLine {
+  width: 2px;
+  flex: 1;
+  min-height: 20px;
+  background: rgba(255, 255, 255, 0.08);
+  margin: 4px 0;
+}
+
+.lineComplete { background: rgba(34, 197, 94, 0.3); }
+
+.timelineContent {
+  flex: 1;
+  padding-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.timelineLabel {
+  font-size: 13px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.labelComplete { color: rgba(255, 255, 255, 0.8); }
+
+.timelineDate {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.25);
+}
+
+.timelineCheck {
+  font-size: 10px;
+  font-weight: 700;
+  color: #4ade80;
+}
+
+/* ── AI card ──────────────────────────────────────────────────────────────────── */
+.aiCard {
+  background: linear-gradient(135deg, rgba(99,102,241,0.1), rgba(139,92,246,0.08));
+  border: 1px solid rgba(99, 102, 241, 0.2);
+  border-radius: 14px;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.aiHeader {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.aiBadge {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.07em;
+  color: #a5b4fc;
+  text-transform: uppercase;
+}
+
+.aiText {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 1.65;
+}
+
+/* ── Activity list ───────────────────────────────────────────────────────────── */
+.activityList { display: flex; flex-direction: column; gap: 0; }
+
+.activityItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.activityIcon {
+  font-size: 16px;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.activityBody {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.activityLabel {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.activityTime {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.25);
+}
+
+/* ── Settings actions ─────────────────────────────────────────────────────────── */
+.actionList {
+  display: flex;
+  flex-direction: column;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.actionRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px;
+  background: none;
+  border: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  color: rgba(255, 255, 255, 0.7);
+  cursor: pointer;
+  transition: background 0.12s;
+  text-align: left;
+  width: 100%;
+}
+
+.actionRow:last-child { border-bottom: none; }
+.actionRow:hover { background: rgba(255, 255, 255, 0.04); }
+
+.actionRowIcon { font-size: 18px; flex-shrink: 0; }
+.actionRowLabel { flex: 1; font-size: 13px; font-weight: 600; }
+
+/* Delete */
+.deleteBtn {
+  width: 100%;
+  padding: 13px;
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.25);
+  border-radius: 12px;
+  color: #f87171;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.deleteBtn:hover { background: rgba(239, 68, 68, 0.18); }
+
+.deleteSub {
+  margin-top: 6px;
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.2);
+  text-align: center;
+}
+
+/* ── Empty text ──────────────────────────────────────────────────────────────── */
+.emptyText {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.25);
+  font-style: italic;
+}
+
+/* ── Fixed action bar ──────────────────────────────────────────────────────────── */
+.actionBar {
+  flex-shrink: 0;
+  display: flex;
+  gap: 8px;
+  padding: 10px 16px 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+  background: #0f1117;
+}
+
+.actionGhost {
+  flex: 1;
+  padding: 11px 0;
+  border-radius: 12px;
+  font-size: 13px;
+  font-weight: 700;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.6);
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.actionGhost:hover { background: rgba(255, 255, 255, 0.1); }
+
+.actionPrimary {
+  flex: 1.6;
+  padding: 11px 0;
+  border-radius: 12px;
+  font-size: 13px;
+  font-weight: 700;
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  transition: opacity 0.15s;
+}
+.actionPrimary:hover { opacity: 0.88; }

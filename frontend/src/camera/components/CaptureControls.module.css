@@ -1,0 +1,204 @@
+/* CaptureControls.module.css */
+
+.root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  padding: 0 0 12px;
+  flex-shrink: 0;
+}
+
+/* Workflow sits just above the capture row */
+.workflowRow {
+  margin-bottom: 10px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+/* Mode selector */
+.modeRow {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 14px;
+  background: rgba(255,255,255,0.05);
+  border-radius: 20px;
+  padding: 3px;
+}
+
+.modeBtn {
+  padding: 4px 14px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: rgba(255,255,255,0.45);
+  background: transparent;
+  border: none;
+  border-radius: 16px;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+  text-transform: uppercase;
+}
+
+.modeBtnActive {
+  background: rgba(99, 102, 241, 0.3);
+  color: #a5b4fc;
+}
+
+/* Main row */
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 28px;
+}
+
+/* Side buttons */
+.sideBtn {
+  width: 46px;
+  height: 46px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 50%;
+  color: rgba(255,255,255,0.7);
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.sideBtn:hover {
+  background: rgba(255,255,255,0.14);
+}
+
+/* ── Capture Button ──────────────────────────────────────────────────────────── */
+.captureWrapper {
+  position: relative;
+  width: 76px;
+  height: 76px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.captureBtn {
+  position: relative;
+  z-index: 2;
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  border: 3px solid rgba(255,255,255,0.85);
+  background: transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 0.2s, transform 0.15s;
+}
+
+.captureBtn:active {
+  transform: scale(0.94);
+}
+
+.captureBtnRec {
+  border-color: #ef4444;
+}
+
+.captureBtnProcessing {
+  border-color: rgba(255,255,255,0.3);
+}
+
+.captureInner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.photoCircle {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background: #fff;
+  transition: transform 0.1s;
+}
+
+.captureBtn:active .photoCircle {
+  transform: scale(0.9);
+}
+
+.videoCircle {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background: #ef4444;
+}
+
+.stopSquare {
+  width: 22px;
+  height: 22px;
+  border-radius: 4px;
+  background: #ef4444;
+}
+
+.processingRing {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 3px solid rgba(255,255,255,0.2);
+  border-top-color: #fff;
+  animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Recording ripple */
+.recRipple {
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  border: 2px solid rgba(239, 68, 68, 0.5);
+  animation: ripple 1.4s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes ripple {
+  0%   { transform: scale(0.85); opacity: 0.8; }
+  100% { transform: scale(1.25); opacity: 0; }
+}
+
+/* ── Gallery Thumbnail ───────────────────────────────────────────────────────── */
+.gallery {
+  width: 46px;
+  height: 46px;
+  cursor: pointer;
+}
+
+.thumb {
+  width: 46px;
+  height: 46px;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.08);
+  border: 1.5px solid rgba(255,255,255,0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  transition: opacity 0.15s;
+}
+
+.thumb:hover {
+  opacity: 0.8;
+}
+
+.videoBadge {
+  font-size: 9px;
+  font-weight: 700;
+  color: rgba(255,255,255,0.7);
+  letter-spacing: 0.02em;
+}

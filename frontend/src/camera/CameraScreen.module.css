@@ -1,0 +1,48 @@
+/* CameraScreen.module.css */
+
+/* ── Full-screen mobile phone viewport ──────────────────────────────────────── */
+.screen {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  overflow: hidden;
+  /* Mobile safe-area support */
+  padding-top: env(safe-area-inset-top, 0);
+}
+
+/* ── Preview zone: fills all available vertical space minus controls ─────────── */
+/*.previewZone {
+  position: relative;
+  flex: 1;
+  min-height: 0;
+  /* The preview zone gets ~72-75% naturally because the controls zone
+     has a fixed intrinsic height */
+  /*overflow: hidden;
+}*/
+.previewZone {
+    position:relative;
+
+    flex:1;
+
+    display:flex;
+
+    overflow:hidden;
+}
+/* ── Controls zone: fixed intrinsic height from content ─────────────────────── */
+.controlsZone {
+  flex-shrink: 0;
+  background: #0a0b12;
+  padding-top: 16px;
+}
+
+/* ── AI Status pill floats top-right of controls zone ───────────────────────── */
+.statusPill {
+  position: absolute;
+  /* Align with the capture controls row — roughly 160px from bottom excluding nav */
+  bottom: calc(env(safe-area-inset-bottom, 0px) + 108px);
+  right: 16px;
+  z-index: 35;
+}

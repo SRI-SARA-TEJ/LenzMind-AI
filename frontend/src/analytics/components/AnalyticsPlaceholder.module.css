@@ -1,0 +1,54 @@
+/* analytics/components/AnalyticsPlaceholder.module.css
+ *
+ * Shared placeholder styles for Phase-1 analytics component stubs.
+ * Matches the dark theme and indigo accent used across all modules.
+ */
+
+.placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 32px 20px;
+  background: rgba(255,255,255,0.03);
+  border: 1px dashed rgba(99,102,241,0.22);
+  border-radius: 16px;
+  text-align: center;
+  width: 100%;
+}
+
+.placeholderIcon {
+  font-size: 38px;
+  line-height: 1;
+  margin-bottom: 4px;
+  opacity: 0.65;
+}
+
+.placeholderLabel {
+  font-size: 13px;
+  font-weight: 700;
+  color: rgba(165,180,252,0.65);
+  letter-spacing: 0.02em;
+}
+
+.placeholderSub {
+  font-size: 11px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.22);
+  letter-spacing: 0.03em;
+}
+
+.phase2Badge {
+  display: inline-block;
+  padding: 3px 10px;
+  background: rgba(99,102,241,0.1);
+  border: 1px solid rgba(99,102,241,0.25);
+  border-radius: 20px;
+  font-size: 9px;
+  font-weight: 800;
+  color: rgba(165,180,252,0.7);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-top: 2px;
+}

@@ -1,0 +1,173 @@
+/* WorkflowCard.module.css */
+
+.card {
+  background: rgba(26, 29, 39, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 14px;
+  padding: 14px;
+  cursor: pointer;
+  transition: border-color 0.18s ease, transform 0.15s ease, background 0.18s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  outline: none;
+}
+
+.card:hover {
+  border-color: rgba(99, 102, 241, 0.4);
+  background: rgba(30, 33, 48, 0.95);
+  transform: translateY(-1px);
+}
+
+.card:focus-visible {
+  border-color: #6366f1;
+  box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.3);
+}
+
+.card.compact {
+  padding: 10px 12px;
+  gap: 5px;
+}
+
+/* Top row */
+.top {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.icon {
+  font-size: 22px;
+  line-height: 1;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.nameBlock {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.name {
+  font-size: 13px;
+  font-weight: 700;
+  color: #e8eaf0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.category {
+  font-size: 10px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.35);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+/* Favorite button */
+.favBtn {
+  font-size: 16px;
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.25);
+  cursor: pointer;
+  line-height: 1;
+  padding: 0;
+  transition: color 0.15s, transform 0.15s;
+  flex-shrink: 0;
+}
+
+.favBtn:hover { color: #f59e0b; transform: scale(1.2); }
+.favBtn.favActive { color: #f59e0b; }
+
+/* Description */
+.desc {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.45);
+  line-height: 1.5;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Badges */
+.badges {
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap;
+}
+
+.badgeAI {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 7px;
+  background: linear-gradient(135deg, rgba(99,102,241,0.25), rgba(139,92,246,0.25));
+  border: 1px solid rgba(99, 102, 241, 0.35);
+  border-radius: 20px;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: #a5b4fc;
+}
+
+.badgeBuiltIn {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 7px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  font-size: 9px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.3);
+}
+
+/* Footer */
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: auto;
+}
+
+.stats {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.stat {
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.3);
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.statSep {
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.2);
+}
+
+/* Quick apply button */
+.applyBtn {
+  padding: 4px 12px;
+  background: rgba(99, 102, 241, 0.2);
+  border: 1px solid rgba(99, 102, 241, 0.35);
+  border-radius: 8px;
+  font-size: 11px;
+  font-weight: 600;
+  color: #a5b4fc;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+
+.applyBtn:hover {
+  background: rgba(99, 102, 241, 0.38);
+  color: #fff;
+}

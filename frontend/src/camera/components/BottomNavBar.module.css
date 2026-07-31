@@ -1,0 +1,76 @@
+/* BottomNavBar.module.css */
+
+.nav {
+  display: flex;
+  align-items: stretch;
+  justify-content: space-around;
+  background: rgba(10, 11, 18, 0.96);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-top: 1px solid rgba(255,255,255,0.06);
+  padding: 6px 0 env(safe-area-inset-bottom, 6px);
+  flex-shrink: 0;
+}
+
+.tab {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  padding: 6px 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  color: rgba(255,255,255,0.35);
+  transition: color 0.15s ease;
+  min-width: 0;
+}
+
+.tab:hover {
+  color: rgba(255,255,255,0.65);
+}
+
+.tabActive {
+  color: #6366f1;
+}
+
+.tabIcon {
+  width: 22px;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tabIcon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.tabLabel {
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  transition: color 0.15s;
+}
+
+/* Active indicator bar */
+.activeBar {
+  position: absolute;
+  top: 0;
+  left: 25%;
+  right: 25%;
+  height: 2px;
+  background: #6366f1;
+  border-radius: 0 0 2px 2px;
+  animation: barIn 0.2s ease;
+}
+
+@keyframes barIn {
+  from { opacity: 0; transform: scaleX(0.4); }
+  to   { opacity: 1; transform: scaleX(1); }
+}

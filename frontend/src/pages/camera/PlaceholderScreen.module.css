@@ -1,0 +1,63 @@
+/* PlaceholderScreen.module.css */
+
+.root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  gap: 14px;
+  padding: 40px 24px;
+  background: #0f1117;
+  text-align: center;
+}
+
+.icon {
+  font-size: 52px;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.title {
+  font-size: 22px;
+  font-weight: 700;
+  color: #e8eaf0;
+}
+
+.sub {
+  font-size: 14px;
+  color: rgba(255,255,255,0.45);
+  max-width: 280px;
+  line-height: 1.6;
+}
+
+.badge {
+  display: inline-block;
+  padding: 4px 12px;
+  background: rgba(99, 102, 241, 0.15);
+  border: 1px solid rgba(99, 102, 241, 0.3);
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 600;
+  color: #a5b4fc;
+  letter-spacing: 0.04em;
+  margin-top: 4px;
+}
+
+.back {
+  margin-top: 12px;
+  padding: 10px 22px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.7);
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.back:hover {
+  background: rgba(255,255,255,0.12);
+  color: #fff;
+}

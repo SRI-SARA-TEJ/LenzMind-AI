@@ -1,0 +1,291 @@
+/* AnalyticsPage.module.css */
+
+/* ── Page shell ──────────────────────────────────────────────────────────────── */
+.page {
+  padding: var(--space-6);
+  max-width: 900px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+}
+
+.center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-4);
+  padding: var(--space-12);
+}
+
+.loadingText {
+  color: var(--color-text-muted);
+  font-size: 0.875rem;
+}
+
+.errorText {
+  color: var(--color-error);
+  font-size: 0.875rem;
+}
+
+/* ── Section layout ──────────────────────────────────────────────────────────── */
+.section {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  padding: var(--space-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.sectionTitle {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--color-text);
+  margin: 0;
+}
+
+.sectionSub {
+  font-size: 0.8125rem;
+  color: var(--color-text-muted);
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* ── Stats grid ──────────────────────────────────────────────────────────────── */
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: var(--space-4);
+}
+
+/* ── Donut rings ─────────────────────────────────────────────────────────────── */
+.ringsRow {
+  display: flex;
+  gap: var(--space-8);
+  flex-wrap: wrap;
+}
+
+.ringWrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.ringLabel {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  text-align: center;
+}
+
+/* ── Agent breakdown bars ────────────────────────────────────────────────────── */
+.agentList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.agentRow {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.agentRowHeader {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.agentDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.agentRowLabel {
+  font-size: 0.8125rem;
+  color: var(--color-text);
+  flex: 1;
+}
+
+.agentRowRate {
+  font-size: 0.8125rem;
+  font-weight: 600;
+}
+
+.agentRowTotal {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+}
+
+.barTrack {
+  height: 8px;
+  background: var(--color-surface-2);
+  border-radius: 4px;
+  overflow: hidden;
+  display: flex;
+}
+
+.barSegmentAccepted {
+  height: 100%;
+  background: var(--color-success);
+  transition: width 0.4s ease;
+}
+
+.barSegmentDismissed {
+  height: 100%;
+  background: var(--color-error);
+  opacity: 0.7;
+  transition: width 0.4s ease;
+}
+
+.barSegmentPending {
+  height: 100%;
+  background: var(--color-border);
+  transition: width 0.4s ease;
+}
+
+.barLegend {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  flex-wrap: wrap;
+}
+
+.legendDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* ── Trend chart ─────────────────────────────────────────────────────────────── */
+.trendWrap {
+  overflow-x: auto;
+}
+
+.trendSvg {
+  width: 100%;
+  display: block;
+}
+
+.trendLegendLine {
+  display: inline-block;
+  width: 20px;
+  height: 2px;
+  vertical-align: middle;
+  margin-right: 2px;
+}
+
+.trendLegendDash {
+  display: inline-block;
+  width: 20px;
+  height: 2px;
+  vertical-align: middle;
+  margin-right: 2px;
+  background-image: repeating-linear-gradient(
+    to right,
+    currentColor 0, currentColor 4px,
+    transparent 4px, transparent 7px
+  );
+  background-color: transparent;
+}
+
+/* ── Confidence stats ────────────────────────────────────────────────────────── */
+.confidenceRow {
+  display: flex;
+  gap: var(--space-8);
+  flex-wrap: wrap;
+}
+
+.confidenceStat {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.confLabel {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+}
+
+.confValue {
+  font-size: 1.75rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+/* ── Creator insights ────────────────────────────────────────────────────────── */
+.insightsGrid {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.insightCard {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-4);
+  padding: var(--space-4);
+  background: var(--color-surface-2);
+  border-radius: 8px;
+  border: 1px solid var(--color-border);
+}
+
+.insightIcon {
+  font-size: 1.25rem;
+  flex-shrink: 0;
+  line-height: 1;
+  margin-top: 2px;
+}
+
+.insightTitle {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-1);
+}
+
+.insightValue {
+  font-size: 0.9375rem;
+  font-weight: 600;
+}
+
+/* ── Tag cloud ───────────────────────────────────────────────────────────────── */
+.tagCloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-top: var(--space-2);
+}
+
+.tagPill {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 10px;
+  border-radius: 999px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  font-size: 0.75rem;
+  color: var(--color-text);
+}
+
+.tagCount {
+  color: var(--color-text-muted);
+  font-size: 0.6875rem;
+}
+
+/* ── Empty state ─────────────────────────────────────────────────────────────── */
+.emptyText {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  text-align: center;
+  padding: var(--space-6) 0;
+  margin: 0;
+}

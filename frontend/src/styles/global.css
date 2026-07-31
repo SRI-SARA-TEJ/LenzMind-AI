@@ -1,0 +1,135 @@
+/**
+ * styles/global.css — Design System Tokens & Base Styles
+ *
+ * All colours, spacing, and typography are defined as CSS custom properties.
+ * This makes theming (dark mode, IBM brand adjustments) a single-file change.
+ */
+
+/* ── Design tokens ─────────────────────────────────────────────────────────── */
+:root {
+  /* Color palette */
+  --color-bg:           #0f1117;
+  --color-surface:      #1a1d27;
+  --color-surface-2:    #22263a;
+  --color-border:       #2e3248;
+  --color-text:         #e8eaf0;
+  --color-text-muted:   #8b8fa8;
+  --color-accent:       #6366f1;       /* Primary — Indigo */
+  --color-accent-hover: #4f52d9;
+  --color-accent-soft:  rgba(99, 102, 241, 0.12);
+  --color-success:      #22c55e;
+  --color-warning:      #f59e0b;
+  --color-error:        #ef4444;
+  --color-info:         #3b82f6;
+
+  /* Agent badge colours */
+  --agent-camera:   #06b6d4;
+  --agent-editing:  #a855f7;
+  --agent-optimize: #f59e0b;
+  --agent-analytics:#22c55e;
+
+  /* Spacing scale */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+
+  /* Typography */
+  --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-size-xs:   11px;
+  --font-size-sm:   13px;
+  --font-size-base: 14px;
+  --font-size-md:   15px;
+  --font-size-lg:   18px;
+  --font-size-xl:   22px;
+  --font-size-2xl:  28px;
+
+  /* Layout */
+  --sidebar-width: 240px;
+  --topbar-height: 60px;
+
+  /* Radius */
+  --radius-sm:  6px;
+  --radius-md:  10px;
+  --radius-lg:  16px;
+  --radius-full: 9999px;
+
+  /* Shadow */
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.3);
+  --shadow-md: 0 4px 16px rgba(0,0,0,0.4);
+}
+
+/* ── Reset ──────────────────────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { font-size: 14px; }
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: inherit; text-decoration: none; }
+button { cursor: pointer; font-family: inherit; }
+input, textarea, select {
+  font-family: inherit;
+  font-size: var(--font-size-base);
+  color: var(--color-text);
+}
+
+/* ── Utility classes ────────────────────────────────────────────────────────── */
+.text-muted   { color: var(--color-text-muted); }
+.text-accent  { color: var(--color-accent); }
+.text-success { color: var(--color-success); }
+.text-warning { color: var(--color-warning); }
+.text-error   { color: var(--color-error); }
+
+.mt-4 { margin-top: var(--space-4); }
+.mt-6 { margin-top: var(--space-6); }
+
+/* ── Scrollbar ──────────────────────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--color-border); border-radius: 3px; }
+
+/* ── Full-screen camera layout helpers ──────────────────────────────────────── */
+html, body, #root {
+  height: 100%;
+}
+
+/*
+ * On real mobile the camera screen fills the viewport.
+ * On desktop (≥ 600px wide) we constrain to a phone-sized column
+ * so the UI looks intentional rather than stretched.
+ */
+@media (min-width: 600px) {
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #070809;
+    min-height: 100vh;
+  }
+
+  #root {
+    /* Simulate a phone frame on desktop */
+    width: 390px;
+    max-width: 390px;
+    height: 844px;
+    max-height: 100vh;
+    border-radius: 36px;
+    overflow: hidden;
+    box-shadow:
+      0 0 0 1px rgba(255,255,255,0.06),
+      0 24px 80px rgba(0,0,0,0.8);
+    position: relative;
+  }
+}

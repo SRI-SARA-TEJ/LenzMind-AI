@@ -1,0 +1,241 @@
+/* AISuggestionCard.module.css */
+
+.card {
+  position: absolute;
+  left: 12px;
+  right: 12px;
+  /* Sits just above the capture controls layer */
+  bottom: 8px;
+  z-index: 40;
+
+  background: rgba(22, 24, 38, 0.82);
+  /*backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);*/
+  border: 1px solid rgba(99, 102, 241, 0.28);
+  border-radius: 16px;
+  padding: 14px 16px;
+
+  /* Slide animation */
+  transform: translateY(0);
+  opacity: 1;
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1),
+              opacity 0.25s ease;
+}
+
+.card.visible {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: all;
+}
+
+.card.hidden {
+  transform: translateY(24px);
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* ── Header ──────────────────────────────────────────────────────────────────── */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.aiLabel {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.aiBadge {
+  display: inline-flex;
+  align-items: center;
+  padding: 1px 7px;
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  border-radius: 20px;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: #fff;
+}
+
+.scene {
+  font-size: 13px;
+  font-weight: 600;
+  color: #e8eaf0;
+}
+
+.close {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 50%;
+  color: rgba(255,255,255,0.5);
+  font-size: 10px;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.close:hover {
+  background: rgba(255,255,255,0.14);
+  color: #fff;
+}
+
+/* ── Body ────────────────────────────────────────────────────────────────────── */
+.body {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.row {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.fieldLabel {
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: rgba(255,255,255,0.35);
+  min-width: 72px;
+  padding-top: 1px;
+}
+
+.fieldValue {
+  font-size: 12px;
+  font-weight: 600;
+  color: #c4b5fd;
+}
+
+.fieldReason {
+  font-size: 11px;
+  color: rgba(255,255,255,0.6);
+  line-height: 1.5;
+  flex: 1;
+}
+
+.recommendationList {
+  flex: 1;
+  padding: 0;
+  margin: 0;
+  color: rgba(255,255,255,0.6);
+  font-size: 11px;
+  line-height: 1.5;
+  list-style: none;
+}
+
+.recommendationList li {
+  position: relative;
+  padding-left: 10px;
+}
+
+.recommendationList li::before {
+  position: absolute;
+  left: 0;
+  color: #a5b4fc;
+  content: '•';
+}
+
+.stateBody {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 36px;
+  color: rgba(255,255,255,0.6);
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+.stateBody p {
+  margin: 0;
+}
+
+.loadingRing {
+  width: 18px;
+  height: 18px;
+  flex: 0 0 auto;
+  border: 2px solid rgba(165,180,252,0.25);
+  border-top-color: #a5b4fc;
+  border-radius: 50%;
+  animation: analysisSpin 0.8s linear infinite;
+}
+
+@keyframes analysisSpin {
+  to { transform: rotate(360deg); }
+}
+
+/* Confidence bar */
+.confidenceBar {
+  flex: 1;
+  height: 4px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 2px;
+  overflow: hidden;
+  margin-top: 5px;
+}
+
+.confidenceFill {
+  height: 100%;
+  border-radius: 2px;
+  transition: width 0.4s ease;
+}
+
+.confidenceNum {
+  font-size: 11px;
+  font-weight: 700;
+  min-width: 32px;
+  text-align: right;
+}
+
+/* ── Actions ─────────────────────────────────────────────────────────────────── */
+.actions {
+  display: flex;
+  gap: 8px;
+}
+
+.btnDismiss,
+.btnApply {
+  flex: 1;
+  padding: 8px 0;
+  border-radius: 10px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.15s;
+}
+
+.btnDismiss {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  color: rgba(255,255,255,0.55);
+}
+
+.btnDismiss:hover {
+  background: rgba(255,255,255,0.12);
+}
+
+.btnApply {
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  border: none;
+  color: #fff;
+}
+
+.btnApply:hover {
+  opacity: 0.88;
+}
+
+/* Applied confirmation state — brief green flash */
+.btnApplied {
+  background: linear-gradient(135deg, #16a34a, #22c55e) !important;
+  opacity: 1 !important;
+  cursor: default;
+}

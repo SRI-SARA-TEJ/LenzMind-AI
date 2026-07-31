@@ -1,0 +1,201 @@
+/* editing/EditingScreen.module.css */
+
+/* ── Full screen shell ───────────────────────────────────────────────────── */
+.screen {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: #0f1117;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Screen that has BottomNavBar (children fill remaining space) */
+.screenWithNav {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: #0f1117;
+  overflow: hidden;
+}
+.screenWithNav > :first-child {
+  flex: 1;
+  overflow-y: auto;
+  min-height: 0;
+}
+
+/* ── Top bar ─────────────────────────────────────────────────────────────── */
+.topBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 16px 12px;
+  flex-shrink: 0;
+}
+
+.topTitle {
+  font-size: 22px;
+  font-weight: 800;
+  color: #e8eaf0;
+  margin: 0;
+}
+
+.topSub {
+  font-size: 11px;
+  color: rgba(255,255,255,0.3);
+  margin: 2px 0 0;
+}
+
+.aiBadge {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 10px;
+  background: rgba(99,102,241,0.1);
+  border: 1px solid rgba(99,102,241,0.25);
+  border-radius: 20px;
+  font-size: 10px;
+  font-weight: 700;
+  color: #a5b4fc;
+  letter-spacing: 0.06em;
+}
+
+.aiBadgeDot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #6366f1;
+  box-shadow: 0 0 6px #6366f1;
+  animation: dotPulse 2s ease-in-out infinite;
+}
+@keyframes dotPulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.4; }
+}
+
+/* ── Scrollable content ──────────────────────────────────────────────────── */
+.content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 0 16px;
+}
+
+/* ── Hero card ───────────────────────────────────────────────────────────── */
+.heroCard {
+  background: linear-gradient(135deg, rgba(99,102,241,0.12), rgba(139,92,246,0.08));
+  border: 1px solid rgba(99,102,241,0.25);
+  border-radius: 20px;
+  padding: 20px;
+  margin-bottom: 24px;
+}
+
+.heroCardTop {
+  margin-bottom: 10px;
+}
+
+.heroBadge {
+  font-size: 10px;
+  font-weight: 800;
+  color: #a5b4fc;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+.heroTitle {
+  font-size: 20px;
+  font-weight: 800;
+  color: #e8eaf0;
+  margin: 0 0 6px;
+  line-height: 1.25;
+}
+
+.heroSub {
+  font-size: 13px;
+  color: rgba(255,255,255,0.45);
+  line-height: 1.6;
+  margin: 0 0 16px;
+}
+
+.heroBtn {
+  width: 100%;
+  padding: 13px 0;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  border: none;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: opacity 0.15s, transform 0.1s;
+}
+.heroBtn:hover  { opacity: 0.9; transform: translateY(-1px); }
+.heroBtn:active { transform: scale(0.97); }
+
+/* ── Section label ───────────────────────────────────────────────────────── */
+.sectionLabel {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: rgba(255,255,255,0.25);
+  margin-bottom: 12px;
+}
+
+/* ── Capabilities grid ───────────────────────────────────────────────────── */
+.capGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.capItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 12px;
+  padding: 10px 12px;
+}
+
+.capIcon { font-size: 18px; flex-shrink: 0; }
+
+.capLabel {
+  font-size: 11px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.5);
+  line-height: 1.3;
+}
+
+/* ── Coming soon card ────────────────────────────────────────────────────── */
+.futureCard {
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 16px;
+  padding: 16px;
+  margin-bottom: 16px;
+}
+
+.futureBadge {
+  display: block;
+  font-size: 10px;
+  font-weight: 800;
+  color: rgba(165,180,252,0.6);
+  letter-spacing: 0.07em;
+  margin-bottom: 6px;
+}
+
+.futureTitle {
+  font-size: 16px;
+  font-weight: 800;
+  color: rgba(255,255,255,0.6);
+  margin: 0 0 5px;
+}
+
+.futureSub {
+  font-size: 12px;
+  color: rgba(255,255,255,0.3);
+  line-height: 1.5;
+  margin: 0;
+}

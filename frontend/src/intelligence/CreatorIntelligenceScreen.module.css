@@ -1,0 +1,1031 @@
+/* CreatorIntelligenceScreen.module.css
+ *
+ * Module 9 — Realis Creator Intelligence Dashboard
+ *
+ * Design language:
+ *   • Dark background  #0f1117
+ *   • Primary accent   #6366f1  (indigo)
+ *   • Secondary accent #8b5cf6  (violet)
+ *   • Cyan accent      #06b6d4
+ *   • Text primary     #e8eaf0
+ *   • Text muted       rgba(255,255,255,0.28–0.4)
+ *   • Surface          rgba(255,255,255,0.03–0.06)
+ *   • Border           rgba(255,255,255,0.07–0.1)
+ *
+ * All layout is mobile-first (max usable width ~430px).
+ * Components are laid out in a single column with consistent 14px padding.
+ * Animations are subtle entrance effects only — no continuous motion except
+ * the IBM dot pulse and the SVG ring transitions.
+ */
+
+/* ════════════════════════════════════════════════════════════════════════════
+   SCREEN SHELL
+   ════════════════════════════════════════════════════════════════════════════ */
+.screen {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: #0f1117;
+  overflow: hidden;
+  font-family: -apple-system, 'Segoe UI', system-ui, sans-serif;
+  color: #e8eaf0;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ════════════════════════════════════════════════════════════════════════════
+   HEADER
+   ════════════════════════════════════════════════════════════════════════════ */
+.header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 14px 16px 10px;
+  flex-shrink: 0;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+.headerLeft {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.ibmBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3px 10px;
+  background: rgba(99,102,241,0.1);
+  border: 1px solid rgba(99,102,241,0.28);
+  border-radius: 20px;
+  font-size: 9px;
+  font-weight: 800;
+  color: #a5b4fc;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+  width: fit-content;
+}
+
+.ibmDot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #6366f1;
+  box-shadow: 0 0 6px rgba(99,102,241,0.9);
+  flex-shrink: 0;
+  animation: ibmPulse 2s ease-in-out infinite;
+}
+
+@keyframes ibmPulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.3; }
+}
+
+.headerTitle {
+  font-size: 20px;
+  font-weight: 800;
+  color: #e8eaf0;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.headerSub {
+  font-size: 11px;
+  color: rgba(255,255,255,0.3);
+  margin: 0;
+}
+
+/* Creator score badge */
+.headerScore {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, rgba(99,102,241,0.15), rgba(139,92,246,0.1));
+  border: 1px solid rgba(99,102,241,0.28);
+  flex-shrink: 0;
+  padding: 0 8px;
+}
+
+.headerScoreVal {
+  font-size: 18px;
+  font-weight: 900;
+  color: #a5b4fc;
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+
+.headerScoreLbl {
+  font-size: 8px;
+  font-weight: 700;
+  color: rgba(165,180,252,0.45);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* ════════════════════════════════════════════════════════════════════════════
+   STATS ROW
+   ════════════════════════════════════════════════════════════════════════════ */
+.statsRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 16px;
+  background: rgba(255,255,255,0.02);
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  flex-shrink: 0;
+}
+
+.statPill {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  flex: 1;
+}
+
+.statVal {
+  font-size: 17px;
+  font-weight: 900;
+  color: #e8eaf0;
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+
+.statLbl {
+  font-size: 9px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.25);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  text-align: center;
+}
+
+.statPillSep {
+  width: 1px;
+  height: 28px;
+  background: rgba(255,255,255,0.07);
+  flex-shrink: 0;
+}
+
+/* ════════════════════════════════════════════════════════════════════════════
+   VIEW TABS
+   ════════════════════════════════════════════════════════════════════════════ */
+.viewTabs {
+  display: flex;
+  align-items: center;
+  padding: 0 12px;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  flex-shrink: 0;
+}
+.viewTabs::-webkit-scrollbar { display: none; }
+
+.viewTab {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 10px 10px 9px;
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  font-size: 11px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.35);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: color 0.15s, border-color 0.15s;
+  flex-shrink: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.viewTabActive {
+  color: #a5b4fc;
+  border-bottom-color: #6366f1;
+}
+
+.viewTabIcon {
+  font-size: 13px;
+  line-height: 1;
+}
+
+.viewTabLabel {
+  letter-spacing: 0.02em;
+}
+
+/* ════════════════════════════════════════════════════════════════════════════
+   SCROLLABLE CONTENT
+   ════════════════════════════════════════════════════════════════════════════ */
+.scroll {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+  padding: 14px 14px 0;
+}
+
+.viewContent {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* ── Learning banner ──────────────────────────────────────────────────────── */
+.learningBanner {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  background: rgba(99,102,241,0.08);
+  border: 1px solid rgba(99,102,241,0.2);
+  border-radius: 10px;
+  font-size: 11px;
+  font-weight: 600;
+  color: #a5b4fc;
+  margin-bottom: 4px;
+}
+
+.learningDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #6366f1;
+  flex-shrink: 0;
+  animation: ibmPulse 1s ease-in-out infinite;
+}
+
+/* ════════════════════════════════════════════════════════════════════════════
+   GENERIC CARD
+   ════════════════════════════════════════════════════════════════════════════ */
+.card {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 18px;
+  padding: 14px 14px 16px;
+  animation: fadeUp 0.35s ease both;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Section heading inside card ─────────────────────────────────────────── */
+.sectionHead {
+  margin-bottom: 12px;
+}
+
+.sectionTitle {
+  font-size: 13px;
+  font-weight: 800;
+  color: #e8eaf0;
+  margin: 0 0 2px;
+  line-height: 1.3;
+}
+
+.sectionSub {
+  font-size: 10px;
+  color: rgba(255,255,255,0.3);
+  margin: 0;
+  font-weight: 500;
+}
+
+/* ── Empty note ──────────────────────────────────────────────────────────── */
+.emptyNote {
+  font-size: 12px;
+  color: rgba(255,255,255,0.25);
+  text-align: center;
+  padding: 18px 0;
+  margin: 0;
+}
+
+/* ════════════════════════════════════════════════════════════════════════════
+   PROFILE HERO
+   ════════════════════════════════════════════════════════════════════════════ */
+.profileHero {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: linear-gradient(145deg, rgba(99,102,241,0.1), rgba(139,92,246,0.06));
+  border: 1px solid rgba(99,102,241,0.2);
+  border-radius: 20px;
+  padding: 16px 14px;
+  animation: fadeUp 0.35s ease both;
+}
+
+/* Avatar + ring wrapper */
+.avatarWrap {
+  position: relative;
+  flex-shrink: 0;
+  width: 56px;
+  height: 56px;
+}
+
+.avatar {
+  position: absolute;
+  inset: 6px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  font-weight: 900;
+  color: #fff;
+  letter-spacing: 0.03em;
+}
+
+.avatarRing {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Learning active pulse */
+.learningPulse {
+  position: absolute;
+  bottom: 2px;
+  right: 2px;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #6366f1;
+  border: 2px solid #0f1117;
+  animation: ibmPulse 1s ease-in-out infinite;
+}
+
+.profileInfo {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.profileName {
+  font-size: 16px;
+  font-weight: 800;
+  color: #e8eaf0;
+  display: block;
+  line-height: 1.2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.profileHandle {
+  font-size: 11px;
+  color: rgba(255,255,255,0.35);
+  font-weight: 500;
+  display: block;
+}
+
+.genreRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-top: 3px;
+}
+
+.genreTag {
+  font-size: 9px;
+  font-weight: 700;
+  padding: 2px 7px;
+  border-radius: 8px;
+  background: rgba(99,102,241,0.12);
+  border: 1px solid rgba(99,102,241,0.25);
+  color: #a5b4fc;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+
+/* Confidence badges stack */
+.profileBadges {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.confBadge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 10px;
+  padding: 5px 8px;
+  min-width: 46px;
+}
+
+.confBadgeVal {
+  font-size: 15px;
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+
+.confBadgeLbl {
+  font-size: 8px;
+  font-weight: 700;
+  color: rgba(255,255,255,0.28);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-top: 2px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+/* ════════════════════════════════════════════════════════════════════════════
+   CONFIDENCE RINGS
+   ════════════════════════════════════════════════════════════════════════════ */
+.ringRow {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  animation: fadeUp 0.4s ease 0.06s both;
+}
+
+.ringWrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  flex: 1;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 18px;
+  padding: 14px 10px 12px;
+}
+
+.ringSvg {
+  width: 108px;
+  height: 108px;
+}
+
+.ringInner {
+  position: absolute;
+  pointer-events: none;
+  /* Because ringWrap uses flex, we overlay the number on the svg using negative margin trick */
+}
+
+/* Override: use absolute positioning inside ringWrap */
+.ringWrap {
+  position: relative;
+}
+
+.ringSvg {
+  display: block;
+}
+
+.ringInner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, calc(-50% - 14px)); /* nudge up for label below */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  pointer-events: none;
+  gap: 0;
+}
+
+.ringVal {
+  font-size: 22px;
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: -0.04em;
+}
+
+.ringUnit {
+  font-size: 9px;
+  color: rgba(255,255,255,0.28);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  margin-top: 1px;
+}
+
+.ringLabel {
+  font-size: 11px;
+  font-weight: 700;
+  color: rgba(255,255,255,0.6);
+  margin: 0;
+  text-align: center;
+}
+
+.ringSub {
+  font-size: 10px;
+  color: rgba(255,255,255,0.25);
+  margin: 0;
+  text-align: center;
+  line-height: 1.4;
+}
+
+/* ════════════════════════════════════════════════════════════════════════════
+   AI STYLE CARD
+   ════════════════════════════════════════════════════════════════════════════ */
+.styleCard {
+  background: linear-gradient(145deg, rgba(99,102,241,0.08), rgba(139,92,246,0.05));
+  border: 1px solid rgba(99,102,241,0.2);
+  border-radius: 18px;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  animation: fadeUp 0.4s ease 0.08s both;
+}
+
+.styleCardHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.trendChip {
+  font-size: 10px;
+  font-weight: 700;
+  border: 1px solid;
+  padding: 2px 8px;
+  border-radius: 20px;
+  text-transform: capitalize;
+  flex-shrink: 0;
+}
+
+.styleText {
+  font-size: 13px;
+  color: rgba(255,255,255,0.75);
+  line-height: 1.6;
+  margin: 0;
+  font-style: italic;
+}
+
+/* Trend stats row */
+.trendRow {
+  display: flex;
+  align-items: center;
+  background: rgba(255,255,255,0.03);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.trendItem {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  padding: 8px 6px;
+}
+
+.trendItemLbl {
+  font-size: 9px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.25);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.trendItemVal {
+  font-size: 16px;
+  font-weight: 900;
+  color: #e8eaf0;
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+
+.trendDiv {
+  width: 1px;
+  height: 30px;
+  background: rgba(255,255,255,0.07);
+  flex-shrink: 0;
+}
+
+/* ════════════════════════════════════════════════════════════════════════════
+   PREDICTION CARD
+   ════════════════════════════════════════════════════════════════════════════ */
+.predCard {
+  background: linear-gradient(145deg, rgba(167,139,250,0.08), rgba(139,92,246,0.05));
+  border: 1px solid rgba(167,139,250,0.2);
+  border-radius: 18px;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  animation: fadeUp 0.4s ease 0.1s both;
+}
+
+.predRow {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 12px;
+  padding: 11px 12px;
+}
+
+.predIcon {
+  font-size: 20px;
+  line-height: 1;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.predMeta {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.predLabel {
+  font-size: 10px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.3);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.predVal {
+  font-size: 14px;
+  font-weight: 800;
+  color: #e8eaf0;
+  line-height: 1.3;
+}
+
+.presetPills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-top: 5px;
+}
+
+.presetPill {
+  font-size: 9px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 8px;
+  background: rgba(99,102,241,0.1);
+  border: 1px solid rgba(99,102,241,0.22);
+  color: #a5b4fc;
+  white-space: nowrap;
+}
+
+/* ════════════════════════════════════════════════════════════════════════════
+   PREFERRED WORKFLOWS
+   ════════════════════════════════════════════════════════════════════════════ */
+.wfList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.wfRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.wfRank {
+  font-size: 10px;
+  font-weight: 800;
+  color: rgba(255,255,255,0.2);
+  width: 20px;
+  flex-shrink: 0;
+  text-align: right;
+}
+
+.wfMeta {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.wfName {
+  font-size: 12px;
+  font-weight: 700;
+  color: #e8eaf0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.wfBar {
+  height: 4px;
+  background: rgba(255,255,255,0.06);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.wfBarFill {
+  height: 100%;
+  background: linear-gradient(90deg, #6366f1, #a78bfa);
+  border-radius: 2px;
+  animation: growBar 0.9s ease both;
+}
+@keyframes growBar {
+  from { width: 0 !important; }
+}
+
+.wfScore {
+  font-size: 12px;
+  font-weight: 800;
+  color: #a5b4fc;
+  flex-shrink: 0;
+  width: 36px;
+  text-align: right;
+}
+
+.wfCount {
+  font-size: 10px;
+  color: rgba(255,255,255,0.25);
+  font-weight: 600;
+  flex-shrink: 0;
+  width: 22px;
+  text-align: right;
+}
+
+/* ════════════════════════════════════════════════════════════════════════════
+   PREFERRED SCENES
+   ════════════════════════════════════════════════════════════════════════════ */
+.sceneList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.sceneRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.sceneMeta {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.sceneName {
+  font-size: 12px;
+  font-weight: 700;
+  color: #e8eaf0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.sceneBar {
+  height: 4px;
+  background: rgba(255,255,255,0.06);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.sceneBarFill {
+  height: 100%;
+  background: linear-gradient(90deg, #06b6d4, #67e8f9);
+  border-radius: 2px;
+  animation: growBar 0.9s ease both;
+}
+
+.scenePct {
+  font-size: 12px;
+  font-weight: 800;
+  color: #67e8f9;
+  flex-shrink: 0;
+  width: 36px;
+  text-align: right;
+}
+
+/* ════════════════════════════════════════════════════════════════════════════
+   CAMERA PREFERENCES GRID
+   ════════════════════════════════════════════════════════════════════════════ */
+.camGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.camCell {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 12px;
+  padding: 10px 6px 8px;
+  text-align: center;
+  animation: fadeUp 0.35s ease both;
+}
+
+.camIcon {
+  font-size: 18px;
+  line-height: 1;
+}
+
+.camVal {
+  font-size: 12px;
+  font-weight: 800;
+  color: #e8eaf0;
+  line-height: 1.2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 100%;
+}
+
+.camLbl {
+  font-size: 9px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.28);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  text-align: center;
+  line-height: 1.3;
+}
+
+/* ════════════════════════════════════════════════════════════════════════════
+   ANALYTICS STAT GRID
+   ════════════════════════════════════════════════════════════════════════════ */
+.statGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.statCell {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 12px;
+  padding: 10px 6px 8px;
+  text-align: center;
+}
+
+.statCellVal {
+  font-size: 18px;
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+
+.statCellLbl {
+  font-size: 9px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.28);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  text-align: center;
+  line-height: 1.3;
+}
+
+/* ════════════════════════════════════════════════════════════════════════════
+   RECOMMENDATION BEHAVIOUR CARD
+   ════════════════════════════════════════════════════════════════════════════ */
+.recBehCard {
+  background: linear-gradient(145deg, rgba(74,222,128,0.05), rgba(6,182,212,0.04));
+  border: 1px solid rgba(74,222,128,0.15);
+  border-radius: 18px;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  animation: fadeUp 0.4s ease both;
+}
+
+.recBehHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.recBehTitle {
+  font-size: 13px;
+  font-weight: 800;
+  color: #e8eaf0;
+}
+
+.recBehStats {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  background: rgba(255,255,255,0.03);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.recBehStat {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  padding: 10px 6px;
+  border-right: 1px solid rgba(255,255,255,0.06);
+}
+.recBehStat:last-child { border-right: none; }
+
+.recBehVal {
+  font-size: 20px;
+  font-weight: 900;
+  color: #e8eaf0;
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+
+.recBehLbl {
+  font-size: 9px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.25);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Acceptance bar */
+.accBar {
+  height: 5px;
+  background: rgba(255,255,255,0.06);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.accBarFill {
+  height: 100%;
+  background: linear-gradient(90deg, #4ade80, #86efac);
+  border-radius: 3px;
+  animation: growBar 1s ease both;
+}
+
+/* ════════════════════════════════════════════════════════════════════════════
+   TIMING / HABITS CARD
+   ════════════════════════════════════════════════════════════════════════════ */
+.timingCard {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 18px;
+  padding: 14px;
+  animation: fadeUp 0.4s ease 0.05s both;
+}
+
+.timingGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.timingCell {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 12px;
+  padding: 10px 6px 8px;
+  text-align: center;
+}
+
+.timingIcon {
+  font-size: 18px;
+  line-height: 1;
+}
+
+.timingVal {
+  font-size: 11px;
+  font-weight: 800;
+  color: #e8eaf0;
+  line-height: 1.2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 100%;
+}
+
+.timingLbl {
+  font-size: 9px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.28);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  text-align: center;
+  line-height: 1.3;
+}
